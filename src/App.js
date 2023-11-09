@@ -49,18 +49,16 @@ function App() {
         <h1 className="minajoText">Minajo</h1>
         <p className="indoText">Indo perkasa</p>
       </div>
-      <div>
-        <p className="ab">
-          At Perkasa Charcoal Industries, we are dedicated to providing the
-          finest quality charcoal products, including rice husk charcoal and
-          coconut shell charcoal.
-        </p>
-        <p className="abc">read more.</p>
-      </div>
-      <div className="change">
-        <a>in</a>
-        <p>|</p>
-        <a>en</a>
+      <div className="footer">
+        <div className="leftfooter">
+          <button>in</button>
+          <p>|</p>
+          <button>en</button>
+        </div>
+        <div className="rightfooter">
+          <p>At Perkasa Charcoal Industries, we are <br/> dedicated to providing the finest quality <br/> charcoal products, including, rice husk <br/> charcoal and coconut shell charcoal</p>
+          <p>read more.</p>
+        </div>
       </div>
     </div>
   );
