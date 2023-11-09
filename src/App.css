@@ -1,10 +1,109 @@
-.App-header {
-  background-color: #272829;
-  min-height: 100vh;
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  background-color: #272829;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+  padding: 20px 100px;
+}
+
+.header .logo img {
+  width: 100px;
+}
+
+.navbar {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: #fff6e0;
+  align-items: center;
+}
+
+.navbar li {
+  margin-right: 5px;
+  list-style-type: none;
+  text-transform: uppercase;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 2px 17px;
+}
+
+.navbar .home,
+.navbar .about,
+.navbar .product,
+.navbar .contact {
+  margin-right: 10px;
+  background-color: none;
+  color: white;
+  font-size: 15px;
+}
+
+.minajoText {
+  color: white;
+  text-transform: uppercase;
+  font-size: 200px;
+  font-family: "Raleway", sans-serif;
+  margin-top: 50px;
+  margin-left: 190px;
+}
+
+.indoText {
+  color: white;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-family: "Kaisei Decol", sans-serif;
+  margin-left: 205px;
+}
+
+.ab {
+  color: white;
+  font-family: "Kaisei Decol", sans-serif;
+  margin-top: 40px;
+  width: 350px;
+  margin-left: auto; /* Add this line to move it to the right */
+  margin-right: 90px; /* You can adjust this margin based on your preference */
+}
+
+.abc {
+  color: white;
+  font-family: "Kaisei Decol", sans-serif;
+  margin-top: 10px;
+  width: 350px;
+  margin-left: auto; /* Add this line to move it to the right */
+  margin-right: 90px; /* You can adjust this margin based on your preference */
+  font-size: 10px;
+}
+
+.change {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  margin-left: 90px; /* Add this line to move it to the right */
+  margin-right: auto;
+  margin-top: -20px;
+}
+
+.change a {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.change p {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
 }
