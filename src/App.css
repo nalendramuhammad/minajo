@@ -12,44 +12,46 @@
   width: 100%;
   flex-direction: column;
   justify-content: space-between;
-  /* align-items: center; */
   padding: 1rem 2rem;
   height: 100vh;
-  background-color: #272829;
+  background-color: #2d4059;
 }
 
-.footer{
+.footer {
   display: flex;
-  width:100%;
+  width: 100%;
   justify-content: space-between;
 }
 
-.footer .leftfooter{
+.footer .leftfooter {
   display: flex;
   align-items: flex-end;
-  color: white;
+  color: #ffd460;
   width: 100%;
-  
 }
 
-.leftfooter button{
+.leftfooter button {
   background-color: transparent;
-  color: white;
+  color: #ffd460;
   width: 20px;
   height: fit-content;
-  border : none;
+  border: none;
   font-family: "Raleway", sans-serif;
 }
 
-.footer .rightfooter{
+.footer .rightfooter {
   width: 40%;
   display: flex;
   flex-direction: column;
-  
-  color: white;
+
+  color: #ffd460;
   font-family: "Kaisei Decol", sans-serif;
 }
 
+.footer .rightfooter .readMore {
+  font-size: 10px;
+  margin-top: 5px;
+}
 
 .header {
   display: flex;
@@ -57,10 +59,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  
 }
 
-.rightfooter p{
+.rightfooter p {
   width: fit-content;
 }
 
@@ -78,7 +79,7 @@
   margin-right: 5px;
   list-style-type: none;
   text-transform: uppercase;
-  border: 1px solid white;
+  border: 1px solid #ffd460;
   border-radius: 20px;
   padding: 2px 17px;
 }
@@ -89,16 +90,16 @@
 .navbar .contact {
   margin-right: 10px;
   background-color: none;
-  color: white;
+  color: #ffd460;
   font-size: 15px;
 }
 
-.content{
-  width:100%;
+.content {
+  width: 100%;
 }
 
 .minajoText {
-  color: white;
+  color: #ffd460;
   text-transform: uppercase;
   font-size: 200px;
   font-family: "Raleway", sans-serif;
@@ -107,7 +108,7 @@
 }
 
 .indoText {
-  color: white;
+  color: #ffd460;
   text-transform: uppercase;
   font-size: 20px;
   font-family: "Kaisei Decol", sans-serif;
@@ -115,7 +116,7 @@
 }
 
 .ab {
-  color: white;
+  color: #ffd460;
   font-family: "Kaisei Decol", sans-serif;
   margin-top: 40px;
   width: 50%;
@@ -124,7 +125,7 @@
 }
 
 .abc {
-  color: white;
+  color: #ffd460;
   font-family: "Kaisei Decol", sans-serif;
   margin-top: 10px;
   width: 350px;
@@ -136,7 +137,7 @@
 .change {
   display: flex;
   flex-direction: row;
-  color: white;
+  color: #ffd460;
   margin-left: 90px; /* Add this line to move it to the right */
   margin-right: auto;
   margin-top: -20px;

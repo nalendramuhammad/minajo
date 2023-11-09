@@ -56,8 +56,12 @@ function App() {
           <button>en</button>
         </div>
         <div className="rightfooter">
-          <p>At Perkasa Charcoal Industries, we are <br/> dedicated to providing the finest quality <br/> charcoal products, including, rice husk <br/> charcoal and coconut shell charcoal</p>
-          <p>read more.</p>
+          <p>
+            At Perkasa Charcoal Industries, we are <br /> dedicated to providing
+            the finest quality <br /> charcoal products, including, rice husk{" "}
+            <br /> charcoal and coconut shell charcoal
+          </p>
+          <p className="readMore">read more.</p>
         </div>
       </div>
     </div>
