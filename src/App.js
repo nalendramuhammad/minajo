@@ -95,11 +95,6 @@ function App() {
           <p className="indoText">Indo perkasa</p>
         </div>
         <div className="footer">
-          <div className="leftfooter">
-            <button>in</button>
-            <p>|</p>
-            <button>en</button>
-          </div>
           <div className="rightfooter">
             <p>
               At Perkasa Charcoal Industries, we are <br /> dedicated to
