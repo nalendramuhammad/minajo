@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Logo from "./assets/minajologo.png";
 import { gsap } from "gsap";
 
 function App() {
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const minajoText = document.querySelector(".minajoText");
 
@@ -36,25 +37,56 @@ function App() {
     // });
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const toggleMenu = () => {
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.toggle("show");
+  };
+
   return (
     <>
-      <div className="App">
+      <div className={`App ${isMobile ? "mobile" : ""}`}>
         <div className="header">
           <div className="logo">
             <img src={Logo} alt="logo" />
           </div>
+          <div className="menu-icon" onClick={toggleMenu}>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+          </div>
           <div className="navbar">
             <div className="home">
-              <li>home</li>
+              <a href="#App">
+                <li>home</li>
+              </a>
             </div>
-            <div className="about">
-              <li>about</li>
+            <div className="about-navbar">
+              <a href="#about">
+                <li>about</li>
+              </a>
             </div>
             <div className="product">
-              <li>product</li>
+              <a href="#product">
+                <li>product</li>
+              </a>
             </div>
             <div className="contact">
-              <li>contact</li>
+              <a href="#contact">
+                <li>contact</li>
+              </a>
             </div>
           </div>
         </div>
@@ -76,6 +108,21 @@ function App() {
             </p>
             <p className="readMore">read more.</p>
           </div>
+        </div>
+      </div>
+      <div className="about">
+        <div className="about-content">
+          <h1>about</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+            voluptatibus, quod, repellendus voluptatem, quos voluptate
+            voluptates quia quae doloremque autem doloribus? Quasi, quas
+            voluptatibus. Quo, voluptate. Quisquam, voluptatibus. Lorem ipsum
+            dolor sit amet consectetur adipisicing elit. Quisquam voluptatibus,
+            quod, repellendus voluptatem, quos voluptate voluptates quia quae
+            doloremque autem doloribus? Quasi, quas voluptatibus. Quo,
+            voluptate. Quisquam, voluptatibus.
+          </p>
         </div>
       </div>
       {/* <div>
