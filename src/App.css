@@ -46,11 +46,37 @@
 
   color: #ffd460;
   font-family: "Kaisei Decol", sans-serif;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  color: #ffd460;
+  transition: color 0.3s;
 }
 
 .footer .rightfooter .readMore {
   font-size: 10px;
   margin-top: 5px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  color: #ffd460;
+  transition: color 0.3s;
+}
+
+.footer .rightfooter .readMore::after {
+  content: "";
+  display: block;
+  width: 0; /* Start with zero width */
+  height: 1px;
+  background-color: #ffd460;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s; /* Add a smooth transition effect */
+}
+
+.footer .rightfooter .readMore:hover::after {
+  width: 100%; /* Expand the width to 100% on hover */
 }
 
 .header {
@@ -82,6 +108,12 @@
   border: 1px solid #ffd460;
   border-radius: 20px;
   padding: 2px 17px;
+}
+
+.navbar li:hover {
+  background-color: #ffd460;
+  color: #2d4059; /* Change the text color to the background color of the page or any other color you prefer */
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar .home,
@@ -154,3 +186,16 @@
   font-family: "Raleway", sans-serif;
   font-weight: bold;
 }
+
+/* .ball {
+  background-color: #ffd460; 
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+} */
