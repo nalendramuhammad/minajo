@@ -67,7 +67,7 @@
 }
 
 .footer .rightfooter .readMore {
-  font-size: 1vw;
+  font-size: 10px;
   cursor: pointer;
   position: relative;
   display: inline-block;
@@ -101,7 +101,7 @@
 
 .rightfooter p {
   width: fit-content;
-  font-size: 1.2vw;
+  font-size: 15px;
 }
 
 .header .logo img {
@@ -268,5 +268,33 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+  }
+
+  .rightfooter p {
+    width: fit-content;
+    font-size: 10px;
+  }
+
+  .footer .rightfooter {
+    width: 150%;
+    display: flex;
+    flex-direction: column;
+
+    color: #ffd460;
+    font-family: "Kaisei Decol", sans-serif;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    color: #ffd460;
+    transition: color 0.3s;
+  }
+
+  .footer .rightfooter .readMore {
+    font-size: 10px;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    color: #ffd460;
+    transition: color 0.3s;
   }
 }
