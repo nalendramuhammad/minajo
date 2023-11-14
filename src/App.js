@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Logo from "./assets/minajologo.png";
+import arrow from "./assets/arrow.png";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -78,7 +82,7 @@ function App() {
                 <li>about</li>
               </a>
             </div>
-            <div className="product">
+            <div className="product-navbar">
               <a href="#product">
                 <li>product</li>
               </a>
@@ -107,17 +111,29 @@ function App() {
       </div>
       <div className="about">
         <div className="about-content">
-          <h1>about</h1>
+          <h1>about us</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-            voluptatibus, quod, repellendus voluptatem, quos voluptate
-            voluptates quia quae doloremque autem doloribus? Quasi, quas
-            voluptatibus. Quo, voluptate. Quisquam, voluptatibus. Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Quisquam voluptatibus,
-            quod, repellendus voluptatem, quos voluptate voluptates quia quae
-            doloremque autem doloribus? Quasi, quas voluptatibus. Quo,
-            voluptate. Quisquam, voluptatibus.
+            Welcome to Minajo, a professional provider in the commodities
+            industry. We are a trusted partner for our customers, providing a
+            wide range of high-quality commodities, including agricultural and
+            fishery products. With our dedication to quality, sustainability and
+            customer satisfaction, we have built a reputation as a reliable
+            supplier in the national market.
           </p>
+        </div>
+        <div className="button-about">
+          <div className="button-about-content">
+            <a href="#product">
+              <p>product</p>
+            </a>
+            <img src={arrow} alt="arrow" />
+          </div>
+        </div>
+      </div>
+      {/* product */}
+      <div className="product" id="product">
+        <div className="product-content">
+          <p>product</p>
         </div>
       </div>
       {/* <div>

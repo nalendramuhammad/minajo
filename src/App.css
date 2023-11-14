@@ -14,7 +14,7 @@
   width: 100%;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 2rem 3rem;
   height: 100vh;
   background-color: #2d4059;
 }
@@ -24,7 +24,17 @@
   width: 100%;
   flex-direction: column;
   justify-content: space-between;
-  padding: 1rem 2rem;
+  padding: 2rem 3rem;
+  height: 100vh;
+  background-color: #2d4059;
+}
+
+.product {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 3rem;
   height: 100vh;
   background-color: #2d4059;
 }
@@ -129,8 +139,8 @@
 } */
 
 .navbar .home,
-.navbar .about,
-.navbar .product,
+.navbar .about-navbar,
+.navbar .product-navbar,
 .navbar .contact {
   margin-right: 10px;
   background-color: none;
@@ -181,9 +191,84 @@
   font-size: 10px;
 }
 
+.about-content {
+  margin-top: 50px;
+  width: 100%;
+  color: #ffd460;
+}
+
+.about-content h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 150px;
+}
+
+.about-content p {
+  width: 90%;
+  font-family: "Kaisei Decol", sans-serif;
+  font-size: 25px;
+}
+
+.button-about {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button-about-content {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ffd460;
+  border-radius: 20px;
+  width: 125px;
+  height: 36px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.button-about-content a {
+  text-decoration: none;
+  color: #ffd460;
+}
+
+.button-about-content img {
+  width: 20px;
+  height: 20px;
+}
+
+.product-content {
+  text-align: center;
+}
+
+.product-content p {
+  font-family: "Raleway", sans-serif;
+  font-size: 50px;
+  color: #ffd460;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+.product-content p::after {
+  content: "";
+  display: block;
+  width: 0; /* Start with zero width */
+  height: 2px;
+  background-color: #ffd460;
+  position: absolute;
+  bottom: 0;
+  transition: width 0.3s;
+}
+
+.product-content p:hover::after {
+  width: 100%;
+}
+
 @media screen and (max-width: 768px) {
   .App {
-    height: 98vh;
+    height: 100vh;
   }
 
   .navbar {
