@@ -1,14 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./App.css";
 import Logo from "./assets/minajologo.png";
-import arrow from "./assets/arrow.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { GoArrowDownRight } from "react-icons/go";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
+  const carouselRef = useRef(null);
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({
+        left: 200, // Adjust the value based on your content width
+        behavior: "smooth",
+      });
+    }
+  };
   useEffect(() => {
     const minajoText = document.querySelector(".minajoText");
 
@@ -61,6 +71,7 @@ function App() {
 
   return (
     <>
+      {/* home */}
       <div className={`App ${isMobile ? "mobile" : ""}`}>
         <div className="header">
           <div className="logo">
@@ -87,7 +98,7 @@ function App() {
                 <li>product</li>
               </a>
             </div>
-            <div className="contact">
+            <div className="contact-navbar">
               <a href="#contact">
                 <li>contact</li>
               </a>
@@ -109,7 +120,8 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="about">
+      {/* about */}
+      <div className="about" id="about">
         <div className="about-content">
           <h1>about us</h1>
           <p>
@@ -122,18 +134,32 @@ function App() {
           </p>
         </div>
         <div className="button-about">
-          <div className="button-about-content">
-            <a href="#product">
+          <a href="#product">
+            <div className="button-about-content">
               <p>product</p>
-            </a>
-            <img src={arrow} alt="arrow" />
-          </div>
+              <GoArrowDownRight />
+            </div>
+          </a>
         </div>
       </div>
       {/* product */}
       <div className="product" id="product">
         <div className="product-content">
           <p>product</p>
+        </div>
+        <div className="gallery-carousel" ref={carouselRef}>
+          <div className="gallery-carousel-content"></div>
+          <div className="gallery-carousel-content"></div>
+          <div className="gallery-carousel-content"></div>
+          <div className="gallery-carousel-content"></div>
+          <div className="gallery-carousel-content"></div>
+        </div>
+        <button onClick={scrollRight}>Scroll Right</button>
+      </div>
+      {/* contact */}
+      <div className="contact" id="contact">
+        <div className="contact-content">
+          <p>contact</p>
         </div>
       </div>
       {/* <div>

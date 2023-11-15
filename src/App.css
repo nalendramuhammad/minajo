@@ -39,6 +39,16 @@
   background-color: #2d4059;
 }
 
+.contact {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 3rem;
+  height: 100vh;
+  background-color: #2d4059;
+}
+
 .footer {
   display: flex;
   width: 98%;
@@ -199,13 +209,13 @@
 
 .about-content h1 {
   font-family: "Raleway", sans-serif;
-  font-size: 150px;
+  font-size: 100px;
 }
 
 .about-content p {
   width: 90%;
   font-family: "Kaisei Decol", sans-serif;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .button-about {
@@ -221,19 +231,22 @@
   width: 125px;
   height: 36px;
   justify-content: center;
-  text-align: center;
   align-items: center;
-  justify-content: space-evenly;
 }
 
-.button-about-content a {
+.button-about-content:hover {
+  background-color: #ffd460;
+  color: #2d4059;
+  transition: background-color 0.7s;
+}
+
+.button-about-content p {
+  margin-right: 5px;
+}
+
+.button-about a {
   text-decoration: none;
   color: #ffd460;
-}
-
-.button-about-content img {
-  width: 20px;
-  height: 20px;
 }
 
 .product-content {
@@ -245,16 +258,16 @@
   font-size: 50px;
   color: #ffd460;
   font-weight: bold;
-  cursor: pointer;
+  /* cursor: pointer;
   position: relative;
   display: inline-block;
-  transition: color 0.3s;
+  transition: color 0.3s; */
 }
 
-.product-content p::after {
+/* .product-content p::after {
   content: "";
   display: block;
-  width: 0; /* Start with zero width */
+  width: 0;
   height: 2px;
   background-color: #ffd460;
   position: absolute;
@@ -264,6 +277,38 @@
 
 .product-content p:hover::after {
   width: 100%;
+} */
+
+/* Your existing styles */
+.gallery-carousel {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  width: 200%; /* Set a specific width for the container, adjust as needed */
+}
+
+.gallery-carousel .gallery-carousel-content {
+  width: 550px;
+  height: 500px;
+  background-color: #ffd460;
+  border: 1px solid #ffd460;
+  margin-right: 10px;
+}
+
+/* contact */
+.contact-content {
+  text-align: center;
+}
+
+.contact-content p {
+  font-family: "Raleway", sans-serif;
+  font-size: 50px;
+  color: #ffd460;
+  font-weight: bold;
+  /* cursor: pointer;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s; */
 }
 
 @media screen and (max-width: 768px) {
@@ -271,8 +316,26 @@
     height: 100vh;
   }
 
+  .about {
+    height: 100vh;
+  }
+
+  .about-content p {
+    width: 70%;
+    font-family: "Kaisei Decol", sans-serif;
+    font-size: 2vh;
+  }
+
+  .product {
+    height: 100vh;
+  }
+
+  .contact {
+    height: 100vh;
+  }
+
   .navbar {
-    display: none; /* Hide the navbar by default on smaller screens */
+    display: none;
     flex-direction: column;
     position: absolute;
     top: 70px;
@@ -281,11 +344,11 @@
   }
 
   .navbar.show {
-    display: flex; /* Show the navbar when the "show" class is added */
+    display: flex;
   }
 
   .menu-icon {
-    display: block; /* Show the menu icon on smaller screens */
+    display: block;
   }
 
   .header .logo img {
@@ -306,5 +369,14 @@
 
   .footer .rightfooter .readMore {
     font-size: 10px;
+  }
+
+  .about-content h1 {
+    font-size: 65px;
+  }
+
+  .about-content p {
+    margin-top: 15px;
+    font-size: 15px;
   }
 }
