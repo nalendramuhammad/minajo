@@ -49,6 +49,16 @@
   background-color: #2d4059;
 }
 
+.foot {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem 3rem;
+  height: 100vh;
+  background-color: #2d4059;
+}
+
 .footer {
   display: flex;
   width: 98%;
@@ -284,14 +294,15 @@
   display: flex;
   flex-direction: row;
   overflow-x: auto; /* Enable horizontal scrolling */
-  width: 200%; /* Set a specific width for the container, adjust as needed */
+  width: 100%; /* Set a specific width for the container, adjust as needed */
 }
 
 .gallery-carousel .gallery-carousel-content {
-  width: 550px;
+  width: 1050px;
   height: 500px;
-  background-color: #ffd460;
+  background-color: transparent;
   border: 1px solid #ffd460;
+  border-radius: 20px;
   margin-right: 10px;
 }
 
@@ -311,8 +322,41 @@
   transition: color 0.3s; */
 }
 
+.foot-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.foot-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.foot-bottom a {
+  text-decoration: none;
+  /* text-transform: uppercase; */
+  color: #ffd460;
+  font-size: 75px;
+  padding: 15px 75px;
+  font-weight: 600;
+  font-family: "Kaisei Decol", sans-serif;
+}
+
+.garis {
+  width: 1px;
+  height: 100%;
+  background-color: #ffd460;
+}
+
 @media screen and (max-width: 768px) {
   .App {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 3rem;
     height: 100vh;
   }
 

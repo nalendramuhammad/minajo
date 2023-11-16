@@ -149,17 +149,35 @@ function App() {
         </div>
         <div className="gallery-carousel" ref={carouselRef}>
           <div className="gallery-carousel-content"></div>
+          {/* <div className="gallery-carousel-content"></div>
           <div className="gallery-carousel-content"></div>
           <div className="gallery-carousel-content"></div>
-          <div className="gallery-carousel-content"></div>
-          <div className="gallery-carousel-content"></div>
+          <div className="gallery-carousel-content"></div> */}
         </div>
-        <button onClick={scrollRight}>Scroll Right</button>
+        {/* <button onClick={scrollRight}>Scroll Right</button> */}
       </div>
       {/* contact */}
       <div className="contact" id="contact">
         <div className="contact-content">
           <p>contact</p>
+        </div>
+      </div>
+      {/* footer */}
+      <div className="foot">
+        <div className="foot-content">
+          <div className="foot-bottom">
+            <a href="#App">Home</a>
+            <a href="#about">About</a>
+            <a href="#product">Product</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div className="garis"></div>
+          <div className="garis">
+            <p>about</p>
+            <p>about</p>
+            <p>about</p>
+            <p>about</p>
+          </div>
         </div>
       </div>
       {/* <div>
