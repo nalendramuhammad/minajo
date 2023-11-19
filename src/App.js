@@ -9,16 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
-  const carouselRef = useRef(null);
 
-  const scrollRight = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({
-        left: 200, // Adjust the value based on your content width
-        behavior: "smooth",
-      });
-    }
-  };
   useEffect(() => {
     const minajoText = document.querySelector(".minajoText");
 
@@ -37,18 +28,6 @@ function App() {
       stagger: 0.3, // Adjust the stagger value for the desired delay between letters
       ease: "power2.inOut",
     });
-    // gsap.set(".ball", { xPercent: -50, yPercent: -50 });
-    // let targets = gsap.utils.toArray(".ball");
-    // window.addEventListener("mousemove", (e) => {
-    //   gsap.to(targets, {
-    //     duration: 0.5,
-    //     x: e.clientX,
-    //     y: e.clientY,
-    //     ease: "power1.out",
-    //     overwrite: "auto",
-    //     stagger: 0.02,
-    //   });
-    // });
   }, []);
 
   useEffect(() => {
@@ -77,6 +56,9 @@ function App() {
           <div className="logo">
             <img src={Logo} alt="logo" />
           </div>
+          {/* contoh */}
+
+          {/* contoh */}
           <div className="menu-icon" onClick={toggleMenu}>
             <div className="bar"></div>
             <div className="bar"></div>
@@ -147,14 +129,15 @@ function App() {
         <div className="product-content">
           <p>product</p>
         </div>
-        <div className="gallery-carousel" ref={carouselRef}>
-          <div className="gallery-carousel-content"></div>
-          {/* <div className="gallery-carousel-content"></div>
+        <div className="gallery-carousel">
           <div className="gallery-carousel-content"></div>
           <div className="gallery-carousel-content"></div>
-          <div className="gallery-carousel-content"></div> */}
         </div>
-        {/* <button onClick={scrollRight}>Scroll Right</button> */}
+        <div className="gallery-carousel-1">
+          <div className="gallery-carousel-content-1"></div>
+          <div className="gallery-carousel-content-1"></div>
+          <div className="gallery-carousel-content-1"></div>
+        </div>
       </div>
       {/* contact */}
       <div className="contact" id="contact">
@@ -171,22 +154,11 @@ function App() {
             <a href="#product">Product</a>
             <a href="#contact">Contact</a>
           </div>
-          <div className="garis"></div>
-          <div className="garis">
-            <p>about</p>
-            <p>about</p>
-            <p>about</p>
-            <p>about</p>
-          </div>
+          {/* <div className="foot-bottom">
+            <p>© 2021 Minajo. All rights reserved.</p>
+          </div> */}
         </div>
       </div>
-      {/* <div>
-        <div className="ball"></div>
-        <div className="ball"></div>
-        <div className="ball"></div>
-        <div className="ball"></div>
-        <div className="ball"></div>
-      </div> */}
     </>
   );
 }

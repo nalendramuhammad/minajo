@@ -33,9 +33,8 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  justify-content: space-between;
   padding: 2rem 3rem;
-  height: 100vh;
+  height: 100%;
   background-color: #2d4059;
 }
 
@@ -58,6 +57,13 @@
   height: 100vh;
   background-color: #2d4059;
 }
+
+/* contoh */
+
+.bottom-nav {
+  display: none;
+}
+/* contoh */
 
 .footer {
   display: flex;
@@ -106,6 +112,7 @@
 .rightfooter p {
   width: fit-content;
   font-size: 15px;
+  font-family: "Kaisei Decol", sans-serif;
 }
 
 .header .logo img {
@@ -150,7 +157,7 @@
 .navbar li:hover {
   background-color: #ffd460;
   color: #2d4059;
-  transition: background-color 0.7s;
+  transition: background-color 0.5s ease-in;
 }
 
 /* .navbar a:hover {
@@ -190,6 +197,7 @@
   font-size: 1.5vw;
   font-family: "Kaisei Decol", sans-serif;
   margin-left: 10px;
+  margin-top: -20px;
 }
 
 .ab {
@@ -268,41 +276,42 @@
   font-size: 50px;
   color: #ffd460;
   font-weight: bold;
-  /* cursor: pointer;
-  position: relative;
-  display: inline-block;
-  transition: color 0.3s; */
 }
-
-/* .product-content p::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background-color: #ffd460;
-  position: absolute;
-  bottom: 0;
-  transition: width 0.3s;
-}
-
-.product-content p:hover::after {
-  width: 100%;
-} */
 
 /* Your existing styles */
 .gallery-carousel {
   display: flex;
   flex-direction: row;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  width: 100%; /* Set a specific width for the container, adjust as needed */
+  width: 100%;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
 }
 
 .gallery-carousel .gallery-carousel-content {
-  width: 1050px;
-  height: 500px;
+  width: 100%;
+  height: 300px;
   background-color: transparent;
   border: 1px solid #ffd460;
-  border-radius: 20px;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+.gallery-carousel-1 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-carousel-1 .gallery-carousel-content-1 {
+  width: 100%;
+  height: 300px;
+  background-color: transparent;
+  border: 1px solid #ffd460;
+  border-radius: 10px;
   margin-right: 10px;
 }
 
@@ -323,10 +332,9 @@
 }
 
 .foot-content {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .foot-bottom {
@@ -336,9 +344,8 @@
 
 .foot-bottom a {
   text-decoration: none;
-  /* text-transform: uppercase; */
   color: #ffd460;
-  font-size: 75px;
+  font-size: 30px;
   padding: 15px 75px;
   font-weight: 600;
   font-family: "Kaisei Decol", sans-serif;
@@ -353,6 +360,10 @@
 @media screen and (max-width: 768px) {
   .App {
     padding: 1rem;
+  }
+
+  .indoText {
+    margin-top: 5px;
   }
 
   .about {
@@ -418,4 +429,6 @@
     margin-top: 10px;
     font-size: 15px;
   }
+
+  /* bottom bar */
 }
