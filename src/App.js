@@ -4,11 +4,32 @@ import Logo from "./assets/minajologo.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { GoArrowDownRight } from "react-icons/go";
+import { GoArrowUp } from "react-icons/go";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
+  const marqueeRef = useRef(null);
+
+  useEffect(() => {
+    const marqueeAnimation = gsap.fromTo(
+      ".marquee__part",
+      { x: 0 },
+      {
+        x: -1000, // Adjust this value based on your content length
+        duration: 5, // Set a longer duration
+        ease: "linear",
+        repeat: -1,
+      }
+    );
+
+    // gsap.set(".marquee__inner", { xPercent: -50 });
+
+    return () => {
+      marqueeAnimation.pause();
+    };
+  }, []);
 
   useEffect(() => {
     const minajoText = document.querySelector(".minajoText");
@@ -25,14 +46,14 @@ function App() {
       opacity: 2,
       y: 0,
       duration: 1,
-      stagger: 0.3, // Adjust the stagger value for the desired delay between letters
+      stagger: 0.3,
       ease: "power2.inOut",
     });
   }, []);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed
+      setIsMobile(window.innerWidth <= 768);
     };
 
     handleResize();
@@ -47,6 +68,23 @@ function App() {
     const navbar = document.querySelector(".navbar");
     navbar.classList.toggle("show");
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const backToTopButton = document.querySelector(".back-to-top");
+      if (window.scrollY > 200) {
+        backToTopButton.style.display = "block";
+      } else {
+        backToTopButton.style.display = "none";
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -145,6 +183,47 @@ function App() {
           <p>contact</p>
         </div>
       </div>
+      {/* tulisan minajo */}
+      <div className="marquee" aria-hidden="true" ref={marqueeRef}>
+        <div className="marquee__inner">
+          <div className="marquee__part">
+            <p>Minajo</p>
+          </div>
+          <div className="marquee__part">
+            <p>Minajo</p>
+          </div>
+          <div className="marquee__part">
+            <p>Minajo</p>
+          </div>
+          <div className="marquee__part">
+            <p>Minajo</p>
+          </div>
+          <div className="marquee__part">
+            <p>Minajo</p>
+          </div>
+          <div className="marquee__part">
+            <p>Minajo</p>
+          </div>
+          <div className="marquee__part">
+            <p>Minajo</p>
+          </div>
+          <div className="marquee__part">
+            <p>Minajo</p>
+          </div>
+          <div className="marquee__part">
+            <p>Minajo</p>
+          </div>
+          <div className="marquee__part">
+            <p>Minajo</p>
+          </div>
+          <div className="marquee__part">
+            <p>Minajo</p>
+          </div>
+          <div className="marquee__part">
+            <p>Minajo</p>
+          </div>
+        </div>
+      </div>
       {/* footer */}
       <div className="foot">
         <div className="foot-content">
@@ -153,10 +232,22 @@ function App() {
             <a href="#about">About</a>
             <a href="#product">Product</a>
             <a href="#contact">Contact</a>
+            <div className="line-bawah"></div>
+          </div>
+          <div className="bahasa">
+            <a href="#">EN</a>
+            <div className="line-bahasa"></div>
+            <a href="#">IN</a>
+          </div>
+          <div className="foot-copyrights">
+            <p>© 2023 Minajo. All rights reserved.</p>
           </div>
           {/* <div className="foot-bottom">
             <p>© 2021 Minajo. All rights reserved.</p>
           </div> */}
+        </div>
+        <div className="back-to-top" onClick={() => window.scrollTo(0, 0)}>
+          <GoArrowUp />
         </div>
       </div>
     </>

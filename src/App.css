@@ -54,7 +54,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 2rem 3rem;
-  height: 100vh;
+  height: 100%;
   background-color: #2d4059;
 }
 
@@ -331,10 +331,37 @@
   transition: color 0.3s; */
 }
 
-.foot-content {
+.marquee {
+  position: relative;
+  background-color: #ffd460;
+  color: #2d4059;
+  /* padding: 30px 0; */
+  font-weight: 600;
+  font-size: 100px;
+  text-transform: uppercase;
+  overflow: hidden;
   width: 100%;
+}
+
+.marquee__inner {
   display: flex;
+  width: fit-content;
+  flex: auto;
   flex-direction: row;
+  gap: 30px;
+}
+
+.marquee__part {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0 4px;
+}
+
+.foot-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
 }
 
 .foot-bottom {
@@ -342,19 +369,70 @@
   flex-direction: column;
 }
 
-.foot-bottom a {
-  text-decoration: none;
-  color: #ffd460;
-  font-size: 30px;
-  padding: 15px 75px;
-  font-weight: 600;
-  font-family: "Kaisei Decol", sans-serif;
+.line-bawah {
+  width: 150px;
+  height: 1px;
+  background-color: #ffd460;
+  margin-top: 20px;
 }
 
-.garis {
+.bahasa {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.bahasa a {
+  text-decoration: none;
+  color: #ffd460;
+  font-size: 20px;
+  padding: 0 0 10px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+
+.line-bahasa {
   width: 1px;
-  height: 100%;
+  height: 15px;
   background-color: #ffd460;
+  margin-top: 5px;
+}
+
+.foot-bottom a {
+  text-decoration: none;
+  color: transparent;
+  font-size: 30px;
+  padding: 0 0 10px;
+  font-weight: 900;
+  font-family: "Raleway", sans-serif;
+  -webkit-text-stroke-color: #ffd460;
+  -webkit-text-stroke-width: 0.5px;
+}
+
+.foot-copyrights p {
+  color: #ffd460;
+  margin-top: 200px;
+  text-align: center;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 50px;
+  background-color: transparent;
+  border: 1px solid #ffd460;
+  color: #ffd460; /* Change this to your preferred text color */
+  padding: 10px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none; /* Initially hide the button */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.back-to-top:hover {
+  background-color: #ffd460; /* Change this to your preferred hover background color */
+  color: #333; /* Change this to your preferred hover text color */
 }
 
 @media screen and (max-width: 768px) {
