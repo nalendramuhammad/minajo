@@ -5,12 +5,54 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { GoArrowDownRight } from "react-icons/go";
 import { GoArrowUp } from "react-icons/go";
+import { Swiper, SwiperSlide } from "swiper/react";
+import minajoproduk from "./assets/fp2.jpeg";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+
+import { Parallax, Pagination, Navigation } from "swiper/modules";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
   const marqueeRef = useRef(null);
+  const [loadingPercentage, setLoadingPercentage] = useState(0);
+
+  useEffect(() => {
+    const tl = gsap.timeline();
+
+    // Part 1: Cover the screen
+    tl.to(".preloader", { opacity: 1, duration: 3, ease: "power1.inOut" });
+
+    // Part 2: Swipe to the left with loading percentage
+    tl.to(".preloader", {
+      xPercent: -100,
+      duration: 2,
+      ease: "power1.inOut",
+      onUpdate: () => {
+        // Simulate checking internet condition
+        const internetCondition = Math.random() > 0.2; // 80% chance of good internet
+        if (internetCondition) {
+          setLoadingPercentage((prevPercentage) =>
+            Math.min(prevPercentage + 2, 100)
+          );
+        } else {
+          // Handle poor internet condition (optional)
+        }
+      },
+      onComplete: () => {
+        // Animation completed, loading is 100%
+        setLoadingPercentage(100);
+      },
+    });
+
+    // Get the total duration of the preloader animation
+    const preloaderDuration = tl.duration();
+  }, []);
 
   useEffect(() => {
     const marqueeAnimation = gsap.fromTo(
@@ -88,6 +130,12 @@ function App() {
 
   return (
     <>
+      <div className="preloader">
+        {/* Customize your preloader content/style here */}
+        <div className="preloader-content">
+          <p>{loadingPercentage}%</p>
+        </div>
+      </div>
       {/* home */}
       <div className={`App ${isMobile ? "mobile" : ""}`}>
         <div className="header">
@@ -167,15 +215,84 @@ function App() {
         <div className="product-content">
           <p>product</p>
         </div>
-        <div className="gallery-carousel">
-          <div className="gallery-carousel-content"></div>
-          <div className="gallery-carousel-content"></div>
-        </div>
-        <div className="gallery-carousel-1">
-          <div className="gallery-carousel-content-1"></div>
-          <div className="gallery-carousel-content-1"></div>
-          <div className="gallery-carousel-content-1"></div>
-        </div>
+        {/* <Swiper
+          style={{
+            "--swiper-navigation-color": "#fff",
+            "--swiper-pagination-color": "#fff",
+          }}
+          speed={600}
+          parallax={true}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Parallax, Pagination, Navigation]}
+          className="mySwiper">
+          <div
+            slot="container-start"
+            className="parallax-bg"
+            style={{
+              "background-image": `url(${minajoproduk})`,
+            }}
+            data-swiper-parallax="-23%"></div>
+          <SwiperSlide>
+            <div className="title" data-swiper-parallax="-300">
+              Slide 1
+            </div>
+            <div className="subtitle" data-swiper-parallax="-200">
+              Subtitle
+            </div>
+            <div className="text" data-swiper-parallax="-100">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+                laoreet justo vitae porttitor porttitor. Suspendisse in sem
+                justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh
+                euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
+                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
+                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+              </p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="title" data-swiper-parallax="-300">
+              Slide 2
+            </div>
+            <div className="subtitle" data-swiper-parallax="-200">
+              Subtitle
+            </div>
+            <div className="text" data-swiper-parallax="-100">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+                laoreet justo vitae porttitor porttitor. Suspendisse in sem
+                justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh
+                euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
+                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
+                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+              </p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="title" data-swiper-parallax="-300">
+              Slide 3
+            </div>
+            <div className="subtitle" data-swiper-parallax="-200">
+              Subtitle
+            </div>
+            <div className="text" data-swiper-parallax="-100">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+                laoreet justo vitae porttitor porttitor. Suspendisse in sem
+                justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh
+                euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
+                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
+                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+              </p>
+            </div>
+          </SwiperSlide>
+        </Swiper> */}
       </div>
       {/* contact */}
       <div className="contact" id="contact">

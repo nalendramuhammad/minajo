@@ -9,6 +9,42 @@
   scroll-behavior: smooth;
 }
 
+/* App.css */
+/* App.css */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000; /* Customize the background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 1;
+}
+.preloader-content {
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* You can add additional styles for your loading percentage text or other elements */
+.preloader-content p {
+  font-size: 350px;
+  color: transparent;
+  -webkit-text-stroke: 2px white;
+  opacity: 0.5;
+}
+
 .App {
   display: flex;
   width: 100%;
@@ -34,7 +70,7 @@
   width: 100%;
   flex-direction: column;
   padding: 2rem 3rem;
-  height: 100%;
+  height: 100vh;
   background-color: #2d4059;
 }
 
@@ -278,41 +314,44 @@
   font-weight: bold;
 }
 
-/* Your existing styles */
-.gallery-carousel {
-  display: flex;
-  flex-direction: row;
+.swiper {
   width: 100%;
-  margin-top: 50px;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
+  background: #000;
 }
 
-.gallery-carousel .gallery-carousel-content {
-  width: 100%;
-  height: 300px;
-  background-color: transparent;
-  border: 1px solid #ffd460;
-  border-radius: 10px;
-  margin-right: 10px;
+.swiper-slide {
+  font-size: 18px;
+  color: #fff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 40px 60px;
 }
 
-.gallery-carousel-1 {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  margin-top: 20px;
-  align-items: center;
-  justify-content: center;
+.parallax-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 150%;
+  height: 100%;
+  -webkit-background-size: cover;
+  background-size: contain;
+  background-position: center;
 }
 
-.gallery-carousel-1 .gallery-carousel-content-1 {
-  width: 100%;
-  height: 300px;
-  background-color: transparent;
-  border: 1px solid #ffd460;
-  border-radius: 10px;
-  margin-right: 10px;
+.swiper-slide .title {
+  font-size: 41px;
+  font-weight: 300;
+}
+
+.swiper-slide .subtitle {
+  font-size: 21px;
+}
+
+.swiper-slide .text {
+  font-size: 14px;
+  max-width: 400px;
+  line-height: 1.3;
 }
 
 /* contact */
