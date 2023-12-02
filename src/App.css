@@ -479,6 +479,13 @@ body {
     padding: 1rem;
   }
 
+  .preloader-content p {
+    font-size: 100px;
+    color: transparent;
+    -webkit-text-stroke: 2px white;
+    opacity: 0.5;
+  }
+
   .indoText {
     margin-top: 5px;
   }
