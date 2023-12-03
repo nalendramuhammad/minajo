@@ -475,9 +475,6 @@ function App() {
           </div>
         </div>
         <div className="copy-right">
-          <div className="by-me">
-            <p>website by nalendra</p>
-          </div>
           <div className="foot-copyrights">
             <p>© 2023 Minajo. All rights reserved.</p>
           </div>
