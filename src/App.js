@@ -225,7 +225,7 @@ function App() {
         </div>
       </div>
       {/* about */}
-      {/* <div className="about" id="about">
+      <div className="about" id="about">
         <div className="about-content">
           <h1>about us</h1>
           <p>
@@ -245,9 +245,9 @@ function App() {
             </div>
           </a>
         </div>
-      </div> */}
+      </div>
       {/* product */}
-      <div className="product" id="product">
+      {/* <div className="product" id="product">
         <div className="product-title">
           <p>product</p>
         </div>
@@ -344,7 +344,7 @@ function App() {
             </SwiperSlide>
           </Swiper>
         </div>
-      </div>
+      </div> */}
       {/* contact */}
       <div className="contact" id="contact">
         <div className="contact-content">
