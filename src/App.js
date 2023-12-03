@@ -145,22 +145,22 @@ function App() {
     navbar.classList.toggle("show");
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const backToTopButton = document.querySelector(".back-to-top");
-      if (window.scrollY > 200) {
-        backToTopButton.style.display = "block";
-      } else {
-        backToTopButton.style.display = "none";
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const backToTopButton = document.querySelector(".back-to-top");
+  //     if (window.scrollY > 200) {
+  //       backToTopButton.style.display = "block";
+  //     } else {
+  //       backToTopButton.style.display = "none";
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   return (
     <>
@@ -490,9 +490,9 @@ function App() {
             <p>© 2021 Minajo. All rights reserved.</p>
           </div> */}
       </div>
-      <div className="back-to-top" onClick={() => window.scrollTo(0, 0)}>
+      {/* <div className="back-to-top" onClick={() => window.scrollTo(0, 0)}>
         <GoArrowUp />
-      </div>
+      </div> */}
     </>
   );
 }
