@@ -11,7 +11,6 @@
 
 /* App.css */
 body {
-
   overflow-x: hidden;
 }
 
@@ -53,7 +52,6 @@ body {
   height: 100vh;
   background-color: #2d4059;
 }
-
 
 .about {
   display: flex;
@@ -655,16 +653,41 @@ body {
 }
 
 @media screen and (max-width: 768px) {
+  .preloader {
+    width: 100vh;
+    height: 100vh;
+  }
   .App {
-    padding: 1rem;
+    padding: 2rem 3rem;
+    width: 100vh;
+    height: 100vh;
   }
 
   .product {
-    padding: 1rem;
+    padding: 2rem 3rem;
+    width: 100vh;
+    height: 100vh;
+  }
+
+  .about {
+    padding: 2rem 3rem;
+    width: 100vh;
+    height: 100vh;
+  }
+
+  .marquee {
+    width: 100vh;
   }
 
   .contact {
-    padding: 1rem;
+    padding: 2rem 3rem;
+    width: 100vh;
+    height: 100vh;
+  }
+
+  .foot {
+    padding: 2rem 3rem;
+    width: 100vh;
   }
 
   .preloader-content p {
