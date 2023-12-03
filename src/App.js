@@ -247,7 +247,7 @@ function App() {
         </div>
       </div>
       {/* product */}
-      {/* <div className="product" id="product">
+      <div className="product" id="product">
         <div className="product-title">
           <p>product</p>
         </div>
@@ -344,7 +344,7 @@ function App() {
             </SwiperSlide>
           </Swiper>
         </div>
-      </div> */}
+      </div>
       {/* contact */}
       <div className="contact" id="contact">
         <div className="contact-content">
