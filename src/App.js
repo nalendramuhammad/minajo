@@ -186,7 +186,6 @@ function App() {
             <div className="bar"></div>
             <div className="bar"></div>
           </div>
-
           <div className="navbar">
             <div className="home">
               <a href="#App">
@@ -226,7 +225,7 @@ function App() {
         </div>
       </div>
       {/* about */}
-      <div className="about" id="about">
+      {/* <div className="about" id="about">
         <div className="about-content">
           <h1>about us</h1>
           <p>
@@ -246,7 +245,7 @@ function App() {
             </div>
           </a>
         </div>
-      </div>
+      </div> */}
       {/* product */}
       <div className="product" id="product">
         <div className="product-title">
