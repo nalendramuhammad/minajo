@@ -13,6 +13,7 @@
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .preloader {
@@ -66,8 +67,8 @@ body {
 
 .product {
   display: flex;
-  /* width: 100%; */
-  /* flex-direction: row; */
+  width: 100%;
+  flex-direction: column;
   padding: 2rem 3rem;
   height: 100vh;
   background-color: #2d4059;
@@ -301,22 +302,28 @@ body {
   color: #ffd460;
 }
 
+.swiper-product-wrap {
+  display: flex;
+  flex-direction: row;
+}
+
 .product-content {
   width: 100%;
-  margin-top: 100px;
+  margin-top: 20px;
   font-family: "Kaisei Decol", sans-serif;
 }
 
-.product-content p {
-  font-size: 50px;
+.product .product-title p {
+  font-family: "Kaisei Decol", sans-serif;
+  font-size: 100px;
   color: #ffd460;
   font-weight: bold;
 }
 
-.product-content p:nth-child(2) {
+.product-content p {
   font-size: 20px;
   width: 80%;
-  margin-top: 10px;
+  color: #ffd460;
   font-weight: 200;
 }
 
@@ -324,7 +331,7 @@ body {
   width: 1050px;
   height: 350px;
   background: #000;
-  margin-top: 140px;
+
   border-radius: 10px;
 }
 
@@ -741,6 +748,29 @@ body {
     margin-top: 10px;
     font-size: 15px;
   }
+  /* product */
+  .product .product-title p {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .swiper-product-wrap {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .swiper-product-wrap .product-content p {
+    margin-top: 20px;
+  }
+
+  .swiper {
+    width: 300px;
+    height: 350px;
+    background: #000;
+    margin-top: 50px;
+    border-radius: 10px;
+  }
+
   /* contact */
   .contact-content {
     display: flex;
@@ -779,6 +809,14 @@ body {
 
   .contact-form .input-text .emphone input:nth-child(2) {
     margin-top: 50px;
+  }
+
+  .contact-form input {
+    border-width: 1px;
+  }
+
+  .contact-form textarea {
+    border-width: 1px;
   }
 
   .contact-form button {

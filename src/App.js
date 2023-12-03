@@ -249,95 +249,102 @@ function App() {
       </div>
       {/* product */}
       <div className="product" id="product">
-        <div className="product-content">
+        <div className="product-title">
           <p>product</p>
-          <p>
-            Explore premium commodities with Minajo, your trusted partner for
-            high-quality agricultural and fishery products. Our commitment to
-            quality, sustainability, and customer satisfaction sets us apart as
-            a reliable supplier in the national market. Elevate your experience
-            with Minajo—a name synonymous with excellence in the commodities
-            industry.
-          </p>
         </div>
-        <Swiper
-          style={{
-            "--swiper-navigation-color": "#fff",
-            "--swiper-pagination-color": "#fff",
-          }}
-          speed={600}
-          parallax={true}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          modules={[Parallax, Pagination, Navigation]}
-          className="mySwiper">
-          <div
-            slot="container-start"
-            className="parallax-bg"
+        <div className="swiper-product-wrap">
+          <div className="product-content">
+            <p>
+              Explore premium commodities with Minajo, your trusted partner for
+              high-quality agricultural and fishery products. Our commitment to
+              quality, sustainability, and customer satisfaction sets us apart
+              as a reliable supplier in the national market. Elevate your
+              experience with Minajo—a name synonymous with excellence in the
+              commodities industry.
+            </p>
+          </div>
+          <Swiper
             style={{
-              "background-image": `url(${minajoproduk})`,
+              "--swiper-navigation-color": "#fff",
+              "--swiper-pagination-color": "#fff",
             }}
-            data-swiper-parallax="-23%"></div>
-          <SwiperSlide>
-            <div className="title" data-swiper-parallax="-300">
-              Slide 1
-            </div>
-            <div className="subtitle" data-swiper-parallax="-200">
-              Subtitle
-            </div>
-            <div className="text" data-swiper-parallax="-100">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                laoreet justo vitae porttitor porttitor. Suspendisse in sem
-                justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh
-                euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
-              </p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="title" data-swiper-parallax="-300">
-              Slide 2
-            </div>
-            <div className="subtitle" data-swiper-parallax="-200">
-              Subtitle
-            </div>
-            <div className="text" data-swiper-parallax="-100">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                laoreet justo vitae porttitor porttitor. Suspendisse in sem
-                justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh
-                euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
-              </p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="title" data-swiper-parallax="-300">
-              Slide 3
-            </div>
-            <div className="subtitle" data-swiper-parallax="-200">
-              Subtitle
-            </div>
-            <div className="text" data-swiper-parallax="-100">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                laoreet justo vitae porttitor porttitor. Suspendisse in sem
-                justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh
-                euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                tincidunt ut libero. Aenean feugiat non eros quis feugiat.
-              </p>
-            </div>
-          </SwiperSlide>
-        </Swiper>
+            speed={600}
+            parallax={true}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Parallax, Pagination, Navigation]}
+            className="mySwiper">
+            <div
+              slot="container-start"
+              className="parallax-bg"
+              style={{
+                "background-image": `url(${minajoproduk})`,
+              }}
+              data-swiper-parallax="-23%"></div>
+            <SwiperSlide>
+              <div className="title" data-swiper-parallax="-300">
+                Slide 1
+              </div>
+              <div className="subtitle" data-swiper-parallax="-200">
+                Subtitle
+              </div>
+              <div className="text" data-swiper-parallax="-100">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Aliquam dictum mattis velit, sit amet faucibus felis iaculis
+                  nec. Nulla laoreet justo vitae porttitor porttitor.
+                  Suspendisse in sem justo. Integer laoreet magna nec elit
+                  suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at
+                  elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula
+                  nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean
+                  feugiat non eros quis feugiat.
+                </p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="title" data-swiper-parallax="-300">
+                Slide 2
+              </div>
+              <div className="subtitle" data-swiper-parallax="-200">
+                Subtitle
+              </div>
+              <div className="text" data-swiper-parallax="-100">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Aliquam dictum mattis velit, sit amet faucibus felis iaculis
+                  nec. Nulla laoreet justo vitae porttitor porttitor.
+                  Suspendisse in sem justo. Integer laoreet magna nec elit
+                  suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at
+                  elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula
+                  nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean
+                  feugiat non eros quis feugiat.
+                </p>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="title" data-swiper-parallax="-300">
+                Slide 3
+              </div>
+              <div className="subtitle" data-swiper-parallax="-200">
+                Subtitle
+              </div>
+              <div className="text" data-swiper-parallax="-100">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Aliquam dictum mattis velit, sit amet faucibus felis iaculis
+                  nec. Nulla laoreet justo vitae porttitor porttitor.
+                  Suspendisse in sem justo. Integer laoreet magna nec elit
+                  suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at
+                  elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula
+                  nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean
+                  feugiat non eros quis feugiat.
+                </p>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
       </div>
       {/* contact */}
       <div className="contact" id="contact">
