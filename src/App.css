@@ -11,8 +11,7 @@
 
 /* App.css */
 body {
-  margin: 0;
-  padding: 0;
+
   overflow-x: hidden;
 }
 
@@ -54,6 +53,7 @@ body {
   height: 100vh;
   background-color: #2d4059;
 }
+
 
 .about {
   display: flex;
@@ -104,7 +104,7 @@ body {
 
 .footer {
   display: flex;
-  width: 98%;
+  width: 100%;
   justify-content: end;
   padding-bottom: 20px;
 }
@@ -268,7 +268,7 @@ body {
 }
 
 .about-content p {
-  width: 90%;
+  width: 100%;
   font-family: "Kaisei Decol", sans-serif;
   font-size: 30px;
 }
@@ -494,6 +494,7 @@ body {
   /* padding: 30px 0; */
   font-weight: 600;
   font-size: 100px;
+  white-space: nowrap;
   text-transform: uppercase;
   overflow: hidden;
   width: 100%;
@@ -515,6 +516,7 @@ body {
 }
 
 .foot-content {
+  width: 100%;
   display: flex;
   flex-direction: row;
   margin-top: 20px;
@@ -535,6 +537,7 @@ body {
 }
 
 .icons {
+  width: 100%;
   display: flex;
   align-items: center;
   margin-bottom: 10px;
@@ -685,7 +688,7 @@ body {
   }
 
   .about-content p {
-    width: 70%;
+    width: 100%;
     font-family: "Kaisei Decol", sans-serif;
     font-size: 10vh;
   }

@@ -135,7 +135,7 @@ function App() {
   };
 
   return (
-    <>
+    <div className="whole">
       <div className="preloader">
         {/* Customize your preloader content/style here */}
         <div className="preloader-content">
@@ -158,7 +158,6 @@ function App() {
             <div className="bar"></div>
             <div className="bar"></div>
           </div>
-
           <div className="navbar">
             <div className="home">
               <a href="#App">
@@ -431,7 +430,7 @@ function App() {
               <a href="#">IN</a>
             </div>
           </div>
-          <div className="foot-contact">
+          {/* <div className="foot-contact">
             <h1>contact</h1>
             <div className="icons">
               <MdOutlineEmail />
@@ -451,7 +450,7 @@ function App() {
                 selatan
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="copy-right">
           <div className="foot-copyrights">
@@ -465,7 +464,7 @@ function App() {
       {/* <div className="back-to-top" onClick={() => window.scrollTo(0, 0)}>
         <GoArrowUp />
       </div> */}
-    </>
+    </div>
   );
 }
 
