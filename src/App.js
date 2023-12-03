@@ -430,7 +430,7 @@ function App() {
               <a href="#">IN</a>
             </div>
           </div>
-          {/* <div className="foot-contact">
+          <div className="foot-contact">
             <h1>contact</h1>
             <div className="icons">
               <MdOutlineEmail />
@@ -450,7 +450,7 @@ function App() {
                 selatan
               </a>
             </div>
-          </div> */}
+          </div>
         </div>
         <div className="copy-right">
           <div className="foot-copyrights">
