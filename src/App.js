@@ -49,6 +49,26 @@ function App() {
   useEffect(() => {
     const tl = gsap.timeline();
 
+    const marqueeAnimation = gsap.fromTo(
+      ".marquee__part",
+      { x: 0 },
+      {
+        x: -1000,
+        duration: 5,
+        ease: "linear",
+        repeat: -1,
+      }
+    );
+
+    const minajoText = document.querySelector(".minajoText");
+    const letters = minajoText.innerText.split("");
+    minajoText.innerHTML = letters
+      .map(
+        (letter) =>
+          `<span style="display: inline-block; opacity: 0">${letter}</span>`
+      )
+      .join("");
+
     tl.to(".preloader", { opacity: 1, duration: 3, ease: "power1.inOut" });
 
     tl.to(".preloader", {
@@ -66,17 +86,15 @@ function App() {
         }
       },
       onComplete: () => {
-        // Slide the black screen to the left after 100%
         gsap.to(".preloader", {
           xPercent: -100,
           duration: 1,
           ease: "power1.inOut",
           onComplete: () => {
-            // Wait for 10 seconds before swiping up
             gsap.delayedCall(10, () => {
               gsap.to(".preloader", {
                 yPercent: -200,
-                xPercent: 0, // Reset xPercent after sliding left
+                xPercent: 0,
                 duration: 10,
                 ease: "power1.inOut",
               });
@@ -85,37 +103,8 @@ function App() {
         });
       },
     });
-  }, []);
 
-  useEffect(() => {
-    const marqueeAnimation = gsap.fromTo(
-      ".marquee__part",
-      { x: 0 },
-      {
-        x: -1000, // Adjust this value based on your content length
-        duration: 5, // Set a longer duration
-        ease: "linear",
-        repeat: -1,
-      }
-    );
-
-    // gsap.set(".marquee__inner", { xPercent: -50 });
-
-    return () => {
-      marqueeAnimation.pause();
-    };
-  }, []);
-
-  useEffect(() => {
-    const minajoText = document.querySelector(".minajoText");
-
-    const letters = minajoText.innerText.split("");
-    minajoText.innerHTML = letters
-      .map(
-        (letter) =>
-          `<span style="display: inline-block; opacity: 0">${letter}</span>`
-      )
-      .join("");
+    // Additional animations...
 
     gsap.to(".minajoText span", {
       opacity: 2,
@@ -124,9 +113,7 @@ function App() {
       stagger: 0.3,
       ease: "power2.inOut",
     });
-  }, []);
 
-  useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
     };
@@ -134,8 +121,10 @@ function App() {
     handleResize();
 
     window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("resize", handleResize);
+      marqueeAnimation.pause();
     };
   }, []);
 
@@ -144,23 +133,6 @@ function App() {
     const navbar = document.querySelector(".navbar");
     navbar.classList.toggle("show");
   };
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const backToTopButton = document.querySelector(".back-to-top");
-  //     if (window.scrollY > 200) {
-  //       backToTopButton.style.display = "block";
-  //     } else {
-  //       backToTopButton.style.display = "none";
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
 
   return (
     <>
@@ -211,7 +183,7 @@ function App() {
           </div>
         </div>
         <div className="content">
-          <h1 className="minajoText">Minajo</h1>
+          <h1 className="minajoText ">Minajo</h1>
           <p className="indoText">Indo perkasa</p>
         </div>
         <div className="footer">
