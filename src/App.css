@@ -10,7 +10,6 @@
 }
 
 /* App.css */
-/* App.css */
 body {
   margin: 0;
   padding: 0;
@@ -67,8 +66,8 @@ body {
 
 .product {
   display: flex;
-  width: 100%;
-  flex-direction: column;
+  /* width: 100%; */
+  /* flex-direction: row; */
   padding: 2rem 3rem;
   height: 100vh;
   background-color: #2d4059;
@@ -77,11 +76,10 @@ body {
 .contact {
   display: flex;
   width: 100%;
-  flex-direction: column;
-  justify-content: space-between;
   padding: 2rem 3rem;
   height: 100vh;
   background-color: #2d4059;
+  justify-content: space-between;
 }
 
 .foot {
@@ -204,7 +202,7 @@ body {
 .navbar .home,
 .navbar .about-navbar,
 .navbar .product-navbar,
-.navbar .contact {
+.navbar .contact-navbar {
   margin-right: 10px;
   background-color: none;
   color: #ffd460;
@@ -304,25 +302,36 @@ body {
 }
 
 .product-content {
-  text-align: center;
+  width: 100%;
+  margin-top: 100px;
+  font-family: "Kaisei Decol", sans-serif;
 }
 
 .product-content p {
-  font-family: "Raleway", sans-serif;
   font-size: 50px;
   color: #ffd460;
   font-weight: bold;
 }
 
+.product-content p:nth-child(2) {
+  font-size: 20px;
+  width: 80%;
+  margin-top: 10px;
+  font-weight: 200;
+}
+
 .swiper {
-  width: 100%;
-  height: 100%;
+  width: 1050px;
+  height: 350px;
   background: #000;
+  margin-top: 140px;
+  border-radius: 10px;
 }
 
 .swiper-slide {
   font-size: 18px;
   color: #fff;
+  background-color: rgba(0, 0, 0, 0.3);
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 40px 60px;
@@ -332,7 +341,7 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  width: 150%;
+  width: 130%;
   height: 100%;
   -webkit-background-size: cover;
   background-size: contain;
@@ -355,19 +364,117 @@ body {
 }
 
 /* contact */
-.contact-content {
-  text-align: center;
-}
 
 .contact-content p {
   font-family: "Raleway", sans-serif;
-  font-size: 50px;
+  font-size: 300px;
   color: #ffd460;
   font-weight: bold;
-  /* cursor: pointer;
-  position: relative;
-  display: inline-block;
-  transition: color 0.3s; */
+  font-family: "Kaisei Decol", sans-serif;
+  text-transform: uppercase;
+  margin-top: -60px;
+}
+
+.contact-content p:nth-child(2) {
+  font-family: "Raleway", sans-serif;
+  font-size: 300px;
+  color: transparent;
+  font-weight: bold;
+  font-family: "Kaisei Decol", sans-serif;
+  text-transform: uppercase;
+  margin-top: -290px;
+  -webkit-text-stroke: 2px #ffd460;
+}
+
+.contact-content p:nth-child(3) {
+  font-family: "Raleway", sans-serif;
+  font-size: 300px;
+  color: #ffd460;
+  font-weight: bold;
+  font-family: "Kaisei Decol", sans-serif;
+  text-transform: uppercase;
+  margin-top: -290px;
+  margin-left: 260px;
+}
+
+.contact-form {
+  background-color: transparent;
+  /* border: 1px solid #ffd460;
+  border-radius: 20px; */
+  width: 500px;
+  height: 610px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+}
+
+.contact-form .input-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.contact-form .input-text .emphone {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.contact-form input {
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: #ffd460;
+  border-width: 2px;
+  color: #ffd460;
+  font-size: 20px;
+  font-family: "Kaisei Decol", sans-serif;
+}
+
+.contact-form textarea {
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-width: 2px;
+  border-color: #ffd460;
+  height: 200px;
+  color: #ffd460;
+  font-size: 20px;
+  font-family: "Kaisei Decol", sans-serif;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #ffd460;
+  font-size: 15px;
+  font-family: "Kaisei Decol", sans-serif;
+  opacity: 0.8;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-width: 2px;
+}
+
+.contact-form button {
+  background-color: transparent;
+  border-radius: 20px;
+  height: 50px;
+  font-family: "Kaisei Decol", sans-serif;
+  color: #ffd460;
+  font-size: 20px;
+  border-color: #ffd460;
+  border-width: 1px;
+  border-radius: 20px;
+  margin-top: 20px;
+  width: 500px;
+  height: 50px;
 }
 
 .marquee {
@@ -399,8 +506,56 @@ body {
 
 .foot-content {
   display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.foot-contact {
+  display: flex;
   flex-direction: column;
-  margin-top: 10px;
+  margin-left: 300px;
+  gap: 1rem;
+  color: #ffd460;
+  width: 450px;
+}
+
+.foot-contact h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 30px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.icons svg {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.icons p {
+  margin: 0;
+  font-family: "Kaisei Decol", sans-serif;
+  font-size: 16px;
+  color: #ffd460;
+}
+
+.icons a {
+  margin: 0;
+  font-family: "Kaisei Decol", sans-serif;
+  font-size: 16px;
+  color: #ffd460;
+  text-decoration: none;
+}
+
+.foot-kiri {
+  display: flex;
+  flex-direction: column;
 }
 
 .foot-bottom {
@@ -449,10 +604,27 @@ body {
   -webkit-text-stroke-width: 0.5px;
 }
 
+.copy-right {
+  display: flex;
+  flex-direction: row;
+  margin-top: 180px;
+  justify-content: space-between; /* Menggunakan space-between agar elemen berada di kiri dan tengah */
+}
+
+.by-me {
+  color: #ffd460;
+  font-size: 15px;
+  font-family: "Kaisei Decol", sans-serif;
+}
+
+.foot-copyrights {
+  margin: auto; /* Center the element horizontally */
+  text-align: center;
+}
+
 .foot-copyrights p {
   color: #ffd460;
-  margin-top: 200px;
-  text-align: center;
+  font-family: "Kaisei Decol", sans-serif;
 }
 
 .back-to-top {
@@ -502,6 +674,8 @@ body {
 
   .product {
     height: 100vh;
+    gap: 2rem;
+    display: flex;
   }
 
   .contact {
@@ -514,7 +688,24 @@ body {
     position: absolute;
     top: 70px;
     width: 100%;
+    height: 100vh;
     background-color: #2d4059;
+    z-index: 9999;
+  }
+
+  .navbar li {
+    list-style-type: none;
+    text-transform: uppercase;
+    border: 0;
+    font-size: 50px;
+    padding: 10px 0;
+    font-weight: 700;
+  }
+
+  .navbar a {
+    text-decoration: none;
+    color: #ffd460;
+    font-family: "Raleway", sans-serif;
   }
 
   .navbar.show {

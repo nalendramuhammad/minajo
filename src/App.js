@@ -7,6 +7,10 @@ import { GoArrowDownRight } from "react-icons/go";
 import { GoArrowUp } from "react-icons/go";
 import { Swiper, SwiperSlide } from "swiper/react";
 import minajoproduk from "./assets/fp2.jpeg";
+import { GoDot } from "react-icons/go";
+import { MdOutlineEmail } from "react-icons/md";
+import { LuPhone } from "react-icons/lu";
+import { BsGeoAlt } from "react-icons/bs";
 
 // Import Swiper styles
 import "swiper/css";
@@ -21,21 +25,38 @@ function App() {
   const [isMobile, setIsMobile] = useState(false);
   const marqueeRef = useRef(null);
   const [loadingPercentage, setLoadingPercentage] = useState(0);
+  const [delayAfterComplete, setDelayAfterComplete] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Add your form submission logic here
+    console.log("Form submitted:", formData);
+    // You can replace the console.log with your actual form submission code
+  };
 
   useEffect(() => {
     const tl = gsap.timeline();
 
-    // Part 1: Cover the screen
     tl.to(".preloader", { opacity: 1, duration: 3, ease: "power1.inOut" });
 
-    // Part 2: Swipe to the left with loading percentage
     tl.to(".preloader", {
-      xPercent: -100,
+      yPercent: -100,
       duration: 2,
       ease: "power1.inOut",
       onUpdate: () => {
-        // Simulate checking internet condition
-        const internetCondition = Math.random() > 0.2; // 80% chance of good internet
+        const internetCondition = Math.random() > 0.2;
         if (internetCondition) {
           setLoadingPercentage((prevPercentage) =>
             Math.min(prevPercentage + 2, 100)
@@ -45,13 +66,25 @@ function App() {
         }
       },
       onComplete: () => {
-        // Animation completed, loading is 100%
-        setLoadingPercentage(100);
+        // Slide the black screen to the left after 100%
+        gsap.to(".preloader", {
+          xPercent: -100,
+          duration: 1,
+          ease: "power1.inOut",
+          onComplete: () => {
+            // Wait for 10 seconds before swiping up
+            gsap.delayedCall(10, () => {
+              gsap.to(".preloader", {
+                yPercent: -200,
+                xPercent: 0, // Reset xPercent after sliding left
+                duration: 10,
+                ease: "power1.inOut",
+              });
+            });
+          },
+        });
       },
     });
-
-    // Get the total duration of the preloader animation
-    const preloaderDuration = tl.duration();
   }, []);
 
   useEffect(() => {
@@ -107,6 +140,7 @@ function App() {
   }, []);
 
   const toggleMenu = () => {
+    setIsMobile(!isMobile);
     const navbar = document.querySelector(".navbar");
     navbar.classList.toggle("show");
   };
@@ -145,11 +179,14 @@ function App() {
           {/* contoh */}
 
           {/* contoh */}
-          <div className="menu-icon" onClick={toggleMenu}>
+          <div
+            className={`menu-icon ${isMobile ? "open" : ""}`}
+            onClick={toggleMenu}>
             <div className="bar"></div>
             <div className="bar"></div>
             <div className="bar"></div>
           </div>
+
           <div className="navbar">
             <div className="home">
               <a href="#App">
@@ -214,8 +251,16 @@ function App() {
       <div className="product" id="product">
         <div className="product-content">
           <p>product</p>
+          <p>
+            Explore premium commodities with Minajo, your trusted partner for
+            high-quality agricultural and fishery products. Our commitment to
+            quality, sustainability, and customer satisfaction sets us apart as
+            a reliable supplier in the national market. Elevate your experience
+            with Minajo—a name synonymous with excellence in the commodities
+            industry.
+          </p>
         </div>
-        {/* <Swiper
+        <Swiper
           style={{
             "--swiper-navigation-color": "#fff",
             "--swiper-pagination-color": "#fff",
@@ -292,12 +337,61 @@ function App() {
               </p>
             </div>
           </SwiperSlide>
-        </Swiper> */}
+        </Swiper>
       </div>
       {/* contact */}
       <div className="contact" id="contact">
         <div className="contact-content">
-          <p>contact</p>
+          <p>co</p>
+          <p>nta</p>
+          <p>ct</p>
+        </div>
+        <div className="contact-form">
+          <form onSubmit={handleSubmit}>
+            <div className="input-text">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="name"
+                required
+              />
+
+              <div className="emphone">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="email"
+                  required
+                />
+
+                <input
+                  type="tel"
+                  id="phoneNumber"
+                  name="phoneNumber"
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
+                  placeholder="phone"
+                  required
+                />
+              </div>
+
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                placeholder="message"
+                onChange={handleChange}
+                required></textarea>
+            </div>
+
+            <button type="submit">Submit</button>
+          </form>
         </div>
       </div>
       {/* tulisan minajo */}
@@ -344,28 +438,56 @@ function App() {
       {/* footer */}
       <div className="foot">
         <div className="foot-content">
-          <div className="foot-bottom">
-            <a href="#App">Home</a>
-            <a href="#about">About</a>
-            <a href="#product">Product</a>
-            <a href="#contact">Contact</a>
-            <div className="line-bawah"></div>
+          <div className="foot-kiri">
+            <div className="foot-bottom">
+              <a href="#App">Home</a>
+              <a href="#about">About</a>
+              <a href="#product">Product</a>
+              <a href="#contact">Contact</a>
+              <div className="line-bawah"></div>
+            </div>
+            <div className="bahasa">
+              <a href="#">EN</a>
+              <div className="line-bahasa"></div>
+              <a href="#">IN</a>
+            </div>
           </div>
-          <div className="bahasa">
-            <a href="#">EN</a>
-            <div className="line-bahasa"></div>
-            <a href="#">IN</a>
+          <div className="foot-contact">
+            <h1>contact</h1>
+            <div className="icons">
+              <MdOutlineEmail />
+              <p>minajoperkasa1@gmail.com</p>
+            </div>
+            <div className="icons">
+              <LuPhone />
+              <p>+62-822-8446-8608</p>
+            </div>
+            <div className="icons">
+              <BsGeoAlt />
+              <a
+                href="https://maps.app.goo.gl/5pP25HtSFxf7UpC58"
+                target="_blank"
+                rel="noopener noreferrer">
+                Puri Asih Sejahtera jl. Sumatra Blok B No.59 Jaka setia, bekasi
+                selatan
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="copy-right">
+          <div className="by-me">
+            <p>website by nalendra</p>
           </div>
           <div className="foot-copyrights">
             <p>© 2023 Minajo. All rights reserved.</p>
           </div>
-          {/* <div className="foot-bottom">
+        </div>
+        {/* <div className="foot-bottom">
             <p>© 2021 Minajo. All rights reserved.</p>
           </div> */}
-        </div>
-        <div className="back-to-top" onClick={() => window.scrollTo(0, 0)}>
-          <GoArrowUp />
-        </div>
+      </div>
+      <div className="back-to-top" onClick={() => window.scrollTo(0, 0)}>
+        <GoArrowUp />
       </div>
     </>
   );
