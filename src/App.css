@@ -535,7 +535,7 @@ body {
 }
 
 .icons {
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   align-items: center;
   margin-bottom: 10px;
@@ -654,40 +654,32 @@ body {
 
 @media screen and (max-width: 768px) {
   .preloader {
-    width: 100vh;
+    width: 100%;
     height: 100vh;
   }
   .App {
     padding: 2rem 3rem;
-    width: 100vh;
-    height: 100vh;
+    width: 100%;
   }
 
   .product {
     padding: 2rem 3rem;
-    width: 100vh;
-    height: 100vh;
+    width: 100%;
   }
 
   .about {
     padding: 2rem 3rem;
-    width: 100vh;
-    height: 100vh;
-  }
-
-  .marquee {
-    width: 100vh;
+    width: 100%;
   }
 
   .contact {
     padding: 2rem 3rem;
-    width: 100vh;
-    height: 100vh;
+    width: 100%;
   }
 
   .foot {
     padding: 2rem 3rem;
-    width: 100vh;
+    width: 100%;
   }
 
   .preloader-content p {
