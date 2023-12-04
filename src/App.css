@@ -536,7 +536,7 @@ body {
   margin-left: 300px;
   gap: 1rem;
   color: #ffd460;
-  width: 450px;
+  /* width: 450px; */
 }
 
 .foot-contact h1 {
@@ -545,7 +545,7 @@ body {
 }
 
 .icons {
-  /* width: 100%; */
+  width: 100%;
   display: flex;
   align-items: center;
   margin-bottom: 10px;
@@ -562,7 +562,7 @@ body {
 .icons p {
   margin: 0;
   font-family: "Kaisei Decol", sans-serif;
-  font-size: 16px;
+  font-size: 2vw;
   color: #ffd460;
 }
 
