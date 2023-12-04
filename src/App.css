@@ -74,7 +74,7 @@ body {
 
 .contact {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100vw;
   padding: 2rem 3rem;
   height: 100vh;
@@ -374,35 +374,45 @@ body {
 
 .contact-content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  height: 100%;
 }
 
 .contact-content p {
   font-family: "Raleway", sans-serif;
-  font-size: 50px;
+  font-size: 300px;
   color: #ffd460;
   font-weight: bold;
   font-family: "Kaisei Decol", sans-serif;
   text-transform: uppercase;
+  position: absolute;
+  transform: translateY(-20%);
 }
 
 .contact-content p:nth-child(2) {
   font-family: "Raleway", sans-serif;
-  font-size: 50px;
+  font-size: 300px;
   color: transparent;
   font-weight: bold;
   font-family: "Kaisei Decol", sans-serif;
   text-transform: uppercase;
-  color: #ffd460;
+  color: transparent;
+  position: absolute;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #ffd460;
+  margin-top: 150px;
 }
 
 .contact-content p:nth-child(3) {
   font-family: "Raleway", sans-serif;
-  font-size: 50px;
+  font-size: 300px;
   color: #ffd460;
   font-weight: bold;
   font-family: "Kaisei Decol", sans-serif;
   text-transform: uppercase;
+  position: absolute;
+  margin-top: 350px;
+  margin-left: 250px;
 }
 
 .contact-form {
@@ -841,8 +851,8 @@ body {
     gap: 1rem;
   }
 
-  .contact-form .input-text .emphone input {
-    margin-top: 0;
+  .contact-form .input-text .emphone input:nth-child(2) {
+    margin-top: 50px;
   }
 
   .contact-form input,

@@ -430,24 +430,26 @@ function App() {
               <a href="#">IN</a>
             </div>
           </div>
-          <h1>contact</h1>
-          <div className="icons">
-            <MdOutlineEmail />
-            <p>minajoperkasa1@gmail.com</p>
-          </div>
-          <div className="icons">
-            <LuPhone />
-            <p>+62-822-8446-8608</p>
-          </div>
-          <div className="icons">
-            <BsGeoAlt />
-            <a
-              href="https://maps.app.goo.gl/5pP25HtSFxf7UpC58"
-              target="_blank"
-              rel="noopener noreferrer">
-              Puri Asih Sejahtera jl. Sumatra Blok B No.59 Jaka setia, bekasi
-              selatan
-            </a>
+          <div className="foot-contact">
+            <h1>contact</h1>
+            <div className="icons">
+              <MdOutlineEmail />
+              <p>minajoperkasa1@gmail.com</p>
+            </div>
+            <div className="icons">
+              <LuPhone />
+              <p>+62-822-8446-8608</p>
+            </div>
+            <div className="icons">
+              <BsGeoAlt />
+              <a
+                href="https://maps.app.goo.gl/5pP25HtSFxf7UpC58"
+                target="_blank"
+                rel="noopener noreferrer">
+                Puri Asih Sejahtera jl. Sumatra Blok B No.59 Jaka setia, bekasi
+                selatan
+              </a>
+            </div>
           </div>
         </div>
         <div className="copy-right">
