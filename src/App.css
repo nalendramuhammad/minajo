@@ -64,19 +64,28 @@ body {
 }
 
 .product {
+  position: relative;
   display: flex;
   width: 100vw;
   flex-direction: column;
-  padding: 2rem 3rem;
-  height: 100%;
-  background-color: #2d4059;
+  padding: 2rem;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+    url("../src/assets/fp2.jpeg");
+  background-repeat: repeat;
+  background-size: contain;
+}
+
+/* Additional styles if needed */
+.product h1 {
+  color: #fff; /* Adjust text color for better visibility on dark background */
 }
 
 .contact {
   display: flex;
   flex-direction: row;
   width: 100vw;
-  padding: 2rem 3rem;
+  padding: 2rem 5rem;
   height: 100vh;
   background-color: #2d4059;
   justify-content: space-between;
@@ -88,7 +97,7 @@ body {
   width: 100%;
   flex-direction: column;
   justify-content: space-between;
-  padding: 3rem;
+  padding: 2rem 3rem;
   height: 100%;
   background-color: #2d4059;
 }
@@ -255,20 +264,20 @@ body {
 }
 
 .about-content {
-  margin-top: 50px;
+  margin-top: 10px;
   width: 100%;
   color: #ffd460;
 }
 
 .about-content h1 {
   font-family: "Raleway", sans-serif;
-  font-size: 100px;
+  font-size: 70px;
 }
 
 .about-content p {
   width: 100%;
   font-family: "Kaisei Decol", sans-serif;
-  font-size: 30px;
+  font-size: 6vh;
 }
 
 .button-about {
@@ -302,128 +311,38 @@ body {
   color: #ffd460;
 }
 
-.swiper-product-wrap {
-  display: flex;
-  flex-direction: row;
-}
-
-.product-content {
-  width: 100%;
-  margin-top: 20px;
-  font-family: "Kaisei Decol", sans-serif;
-}
-
 .product .product-title p {
   font-family: "Kaisei Decol", sans-serif;
-  font-size: 100px;
+  font-size: 50px;
   color: #ffd460;
   font-weight: bold;
-}
-
-.product-content p {
-  font-size: 3vh;
-  width: 80%;
-  color: #ffd460;
-  font-weight: 200;
-}
-
-.swiper {
-  width: 1050px;
-  height: 350px;
-  background: #000;
-
-  border-radius: 10px;
-}
-
-.swiper-slide {
-  font-size: 18px;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.3);
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 40px 60px;
-}
-
-.parallax-bg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 130%;
-  height: 100%;
-  -webkit-background-size: cover;
-  background-size: contain;
-  background-position: center;
-}
-
-.swiper-slide .title {
-  font-size: 41px;
-  font-weight: 300;
-}
-
-.swiper-slide .subtitle {
-  font-size: 21px;
-}
-
-.swiper-slide .text {
-  font-size: 14px;
-  max-width: 400px;
-  line-height: 1.3;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 /* contact */
 
 .contact-content {
   display: flex;
-  flex-direction: column;
-  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-content p {
   font-family: "Raleway", sans-serif;
-  font-size: 300px;
+  font-size: 5vh;
   color: #ffd460;
   font-weight: bold;
-  font-family: "Kaisei Decol", sans-serif;
   text-transform: uppercase;
-  position: absolute;
-  transform: translateY(-20%);
-}
-
-.contact-content p:nth-child(2) {
-  font-family: "Raleway", sans-serif;
-  font-size: 300px;
-  color: transparent;
-  font-weight: bold;
-  font-family: "Kaisei Decol", sans-serif;
-  text-transform: uppercase;
-  color: transparent;
-  position: absolute;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: #ffd460;
-  margin-top: 150px;
-}
-
-.contact-content p:nth-child(3) {
-  font-family: "Raleway", sans-serif;
-  font-size: 300px;
-  color: #ffd460;
-  font-weight: bold;
-  font-family: "Kaisei Decol", sans-serif;
-  text-transform: uppercase;
-  position: absolute;
-  margin-top: 350px;
-  margin-left: 250px;
 }
 
 .contact-form {
   background-color: transparent;
-  /* border: 1px solid #ffd460;
-  border-radius: 20px; */
-  width: 500px;
-  height: 610px;
+  border: 1px solid #ffd460;
+  border-radius: 20px;
   align-items: center;
   justify-content: center;
-  margin-top: 70px;
+  padding: 3rem 4rem;
 }
 
 .contact-form .input-text {
@@ -481,18 +400,19 @@ body {
 }
 
 .contact-form button {
-  background-color: transparent;
+  background-color: #ffd460;
   border-radius: 20px;
   height: 50px;
-  font-family: "Kaisei Decol", sans-serif;
-  color: #ffd460;
+  font-family: "Raleway", sans-serif;
+  color: #2d4059;
   font-size: 20px;
-  border-color: #ffd460;
-  border-width: 1px;
+  border: none;
   border-radius: 20px;
   margin-top: 20px;
   width: 500px;
   height: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .marquee {
@@ -562,14 +482,14 @@ body {
 .icons p {
   margin: 0;
   font-family: "Kaisei Decol", sans-serif;
-  font-size: 2vw;
+  font-size: 20px;
   color: #ffd460;
 }
 
 .icons a {
   margin: 0;
   font-family: "Kaisei Decol", sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   color: #ffd460;
   text-decoration: none;
 }
@@ -685,6 +605,10 @@ body {
   .contact {
     padding: 2rem 3rem;
     width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .foot {
@@ -707,27 +631,17 @@ body {
     height: 100vh;
   }
 
-  .about-content h1 {
-    font-size: 5vh;
-    margin-top: 0;
-  }
-
   .about-content p {
-    width: 100%;
-    font-family: "Kaisei Decol", sans-serif;
-    font-size: 10vh;
-  }
-
-  .product {
-    height: 100%;
-    gap: 2rem;
-    display: flex;
+    font-size: 3vh;
+    margin-top: 10px;
   }
 
   .contact {
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .navbar {
@@ -784,42 +698,19 @@ body {
     font-size: 10px;
   }
 
-  .about-content h1 {
-    font-size: 65px;
-  }
-
-  .about-content p {
-    margin-top: 10px;
-    font-size: 15px;
-  }
   /* product */
   .product .product-title p {
-    font-size: 50px;
-    text-align: center;
-  }
-
-  .swiper-product-wrap {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-
-  .swiper-product-wrap .product-content p {
-    margin-top: 20px;
-  }
-
-  .swiper {
-    width: 300px;
-    height: 350px;
-    background: #000;
-    margin-top: 20px;
-    border-radius: 10px;
-    justify-content: center;
+    font-family: "Kaisei Decol", sans-serif;
+    font-size: 10vw;
+    color: #ffd460;
+    font-weight: bold;
   }
 
   /* contact */
   .contact-content {
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: center;
   }
 
@@ -828,22 +719,9 @@ body {
     margin: 0;
   }
 
-  .contact-content p:nth-child(2) {
-    font-size: 30px;
-    margin: 0;
-    -webkit-text-stroke-width: 0;
-    color: #ffd460;
-  }
-
-  .contact-content p:nth-child(3) {
-    font-size: 30px;
-    margin: 0;
-  }
-
   .contact-form {
     width: 100%;
     max-width: 100%; /* Adjust the max-width based on your preference */
-    margin: 50px auto; /* Center the form horizontally */
   }
 
   .contact-form .input-text .emphone {
@@ -904,6 +782,18 @@ body {
 
   .copy-right p {
     font-size: 10px;
+  }
+
+  .icons p {
+    font-size: 20px;
+  }
+
+  .icons a {
+    font-size: 15px;
+  }
+
+  .foot-copyrights p {
+    font-size: 15px;
   }
 
   /* bottom bar */
