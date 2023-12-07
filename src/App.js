@@ -213,15 +213,22 @@ function App() {
           <a href="#product">
             <div className="button-about-content">
               <p>product</p>
-              <GoArrowDownRight />
+              <GoArrowDownRight style={{ height: "100px" }} />
             </div>
           </a>
         </div>
       </div>
       {/* product */}
       <div className="product" id="product">
-        <div className="product-title">
-          <p>product</p>
+        <div className="product-line">
+          <div className="product-title">
+            <p>product</p>
+          </div>
+          <div className="product-line-content-wrap">
+            <div className="product-line-content"></div>
+            <div className="product-line-content"></div>
+            <div className="product-line-content"></div>
+          </div>
         </div>
       </div>
       {/* contact */}

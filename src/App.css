@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 
 * {
   margin: 0;
@@ -72,7 +73,7 @@ body {
   height: 100vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
     url("../src/assets/fp2.jpeg");
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-size: contain;
 }
 
@@ -120,6 +121,12 @@ body {
   color: #ffd460;
   text-align: end;
 }
+
+.footer .rightfooter p {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
+}
+
 .footer .rightfooter .readMore {
   font-size: 12px;
   cursor: pointer;
@@ -127,6 +134,7 @@ body {
   display: inline-block;
   color: #ffd460;
   transition: color 0.3s;
+  font-family: "Bebas Neue", sans-serif;
 }
 
 .footer .rightfooter .readMore::after {
@@ -151,12 +159,6 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-
-.rightfooter p {
-  width: fit-content;
-  font-size: 15px;
-  font-family: "Kaisei Decol", sans-serif;
 }
 
 .header .logo img {
@@ -204,11 +206,6 @@ body {
   transition: background-color 0.5s ease-in;
 }
 
-/* .navbar a:hover {
-  color: #2d4059;
-  transition: color 0.5s;
-} */
-
 .navbar .home,
 .navbar .about-navbar,
 .navbar .product-navbar,
@@ -239,28 +236,9 @@ body {
   color: #ffd460;
   text-transform: uppercase;
   font-size: 1.5vw;
-  font-family: "Kaisei Decol", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   margin-left: 10px;
   margin-top: -20px;
-}
-
-.ab {
-  color: #ffd460;
-  font-family: "Kaisei Decol", sans-serif;
-  margin-top: 40px;
-  width: 50%;
-  margin-left: auto; /* Add this line to move it to the right */
-  margin-right: 90px; /* You can adjust this margin based on your preference */
-}
-
-.abc {
-  color: #ffd460;
-  font-family: "Kaisei Decol", sans-serif;
-  margin-top: 10px;
-  width: 350px;
-  margin-left: auto; /* Add this line to move it to the right */
-  margin-right: 90px; /* You can adjust this margin based on your preference */
-  font-size: 10px;
 }
 
 .about-content {
@@ -270,14 +248,14 @@ body {
 }
 
 .about-content h1 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Bebas Neue", sans-serif;
   font-size: 70px;
 }
 
 .about-content p {
   width: 100%;
-  font-family: "Kaisei Decol", sans-serif;
-  font-size: 6vh;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 8vh;
 }
 
 .button-about {
@@ -303,7 +281,8 @@ body {
 }
 
 .button-about-content p {
-  margin-right: 5px;
+  /* margin-right: 5px; */
+  font-family: "Bebas Neue", sans-serif;
 }
 
 .button-about a {
@@ -311,13 +290,37 @@ body {
   color: #ffd460;
 }
 
+.product .product-line {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ffd460;
+  border-radius: 20px;
+}
+
 .product .product-title p {
-  font-family: "Kaisei Decol", sans-serif;
-  font-size: 50px;
-  color: #ffd460;
+  font-family: "Raleway", sans-serif;
+  font-size: 10vw;
+  color: transparent;
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
+  margin-top: 20px;
+  -webkit-text-stroke-color: #ffd460;
+  -webkit-text-stroke-width: 2px;
+}
+
+.product .product-line-content-wrap {
+  display: flex;
+  flex-direction: row;
+}
+
+.product .product-line-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-left: 50px;
 }
 
 /* contact */
@@ -629,11 +632,6 @@ body {
 
   .about {
     height: 100vh;
-  }
-
-  .about-content p {
-    font-size: 3vh;
-    margin-top: 10px;
   }
 
   .contact {
