@@ -234,9 +234,13 @@ function App() {
       {/* contact */}
       <div className="contact" id="contact">
         <div className="contact-content">
-          <p>Send us a message</p>
-          {/* <p>nta</p>
-          <p>ct</p> */}
+          <div className="contact-title">
+            <h1>Send us a message</h1>
+            <p>
+              Contact us effortlessly. We are ready to assist you with any
+              questions or feedback you may have.
+            </p>
+          </div>
         </div>
         <div className="contact-form">
           <form onSubmit={handleSubmit}>

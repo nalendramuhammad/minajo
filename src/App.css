@@ -91,6 +91,7 @@ body {
   background-color: #2d4059;
   justify-content: space-between;
   align-items: center;
+  gap: 100px;
 }
 
 .foot {
@@ -123,8 +124,9 @@ body {
 }
 
 .footer .rightfooter p {
-  font-family: "Bebas Neue", sans-serif;
-  font-size: 20px;
+  font-family: "Raleway", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .footer .rightfooter .readMore {
@@ -134,7 +136,7 @@ body {
   display: inline-block;
   color: #ffd460;
   transition: color 0.3s;
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 .footer .rightfooter .readMore::after {
@@ -236,7 +238,7 @@ body {
   color: #ffd460;
   text-transform: uppercase;
   font-size: 1.5vw;
-  font-family: "Bebas Neue", sans-serif;
+  font-family: "Raleway", sans-serif;
   margin-left: 10px;
   margin-top: -20px;
 }
@@ -331,12 +333,23 @@ body {
   justify-content: center;
 }
 
-.contact-content p {
+.contact-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-content h1 {
   font-family: "Raleway", sans-serif;
-  font-size: 5vh;
+  font-size: 2rem;
   color: #ffd460;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.contact-content p {
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  color: #ffd460;
 }
 
 .contact-form {
@@ -346,6 +359,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 3rem 4rem;
+  margin-left: 30px;
 }
 
 .contact-form .input-text {
@@ -379,7 +393,7 @@ body {
   border-right: none;
   border-width: 2px;
   border-color: #ffd460;
-  height: 200px;
+  height: 100px;
   color: #ffd460;
   font-size: 20px;
   font-family: "Kaisei Decol", sans-serif;
@@ -484,14 +498,14 @@ body {
 
 .icons p {
   margin: 0;
-  font-family: "Kaisei Decol", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 20px;
   color: #ffd460;
 }
 
 .icons a {
   margin: 0;
-  font-family: "Kaisei Decol", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 20px;
   color: #ffd460;
   text-decoration: none;
@@ -694,6 +708,10 @@ body {
 
   .footer .rightfooter .readMore {
     font-size: 10px;
+  }
+
+  .about-content p {
+    font-size: 3.5vh;
   }
 
   /* product */
