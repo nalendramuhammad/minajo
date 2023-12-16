@@ -5,24 +5,30 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { GoArrowDownRight } from "react-icons/go";
 import { GoArrowUp } from "react-icons/go";
-import { Swiper, SwiperSlide } from "swiper/react";
 import minajoproduk from "./assets/fp2.jpeg";
 import { GoDot } from "react-icons/go";
 import { MdOutlineEmail } from "react-icons/md";
 import { LuPhone } from "react-icons/lu";
 import { BsGeoAlt } from "react-icons/bs";
 import { Helmet } from "react-helmet";
+import { createClient } from "contentful";
+import contentfulConfig from "./contentfulConfig";
 
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
+const client = createClient({
+  ...contentfulConfig,
+  environment: "master",
+  space: "mhm8o07k920r", // Your space ID
+});
 
-import { Parallax, Pagination, Navigation } from "swiper/modules";
+client
+  .getEntry("3UTRXxCbuOseyjAf0m3GIv")
+  .then((entry) => console.log(entry))
+  .catch(console.error);
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  const [data, setData] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const marqueeRef = useRef(null);
   const [loadingPercentage, setLoadingPercentage] = useState(0);
@@ -32,6 +38,19 @@ function App() {
     email: "",
     message: "",
   });
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await client.getEntries();
+        setData(response.items);
+      } catch (error) {
+        console.error("Error fetching data from Contentful:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -134,7 +153,7 @@ function App() {
     const navbar = document.querySelector(".navbar");
     navbar.classList.toggle("show");
   };
-
+  // console.log(data);
   return (
     <div className="whole">
       <Helmet>
@@ -230,10 +249,15 @@ function App() {
             <p>product</p>
           </div>
           <div className="product-line-content-wrap">
-            <div className="product-line-content"></div>
-            <div className="product-line-content"></div>
-            <div className="product-line-content"></div>
-            <div className="product-line-content"></div>
+            {data &&
+              data.map((item) => (
+                <div key={item.sys.id}>
+                  <div className="product-line-content">
+                    <h3>{item.fields.description}</h3>
+                    <img src={item.fields.productFoto.fields.file.url}></img>
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
       </div>
