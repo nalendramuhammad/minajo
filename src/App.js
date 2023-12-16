@@ -11,6 +11,7 @@ import { GoDot } from "react-icons/go";
 import { MdOutlineEmail } from "react-icons/md";
 import { LuPhone } from "react-icons/lu";
 import { BsGeoAlt } from "react-icons/bs";
+import { Helmet } from "react-helmet";
 
 // Import Swiper styles
 import "swiper/css";
@@ -136,6 +137,10 @@ function App() {
 
   return (
     <div className="whole">
+      <Helmet>
+        <title>Minajo</title>
+        <link rel="icon" type="image/png" href="./assets/minajologo.png" />
+      </Helmet>
       <div className="preloader">
         {/* Customize your preloader content/style here */}
         <div className="preloader-content">
@@ -228,6 +233,7 @@ function App() {
             <div className="product-line-content"></div>
             <div className="product-line-content"></div>
             <div className="product-line-content"></div>
+            <div className="product-line-content"></div>
           </div>
         </div>
       </div>
@@ -235,14 +241,14 @@ function App() {
       <div className="contact" id="contact">
         <div className="contact-content">
           <div className="contact-title">
-            <h1>Send us a message</h1>
-            <p>
+            <h1>
               Contact us effortlessly. We are ready to assist you with any
               questions or feedback you may have.
-            </p>
+            </h1>
           </div>
         </div>
         <div className="contact-form">
+          <h1>contact</h1>
           <form onSubmit={handleSubmit}>
             <div className="input-text">
               <input

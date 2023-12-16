@@ -71,10 +71,11 @@ body {
   flex-direction: column;
   padding: 2rem;
   height: 100vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
     url("../src/assets/fp2.jpeg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: contain; */
+  background-color: #2d4059;
 }
 
 /* Additional styles if needed */
@@ -126,7 +127,6 @@ body {
 .footer .rightfooter p {
   font-family: "Raleway", sans-serif;
   font-size: 15px;
-  font-weight: bold;
 }
 
 .footer .rightfooter .readMore {
@@ -301,7 +301,7 @@ body {
 
 .product .product-title p {
   font-family: "Raleway", sans-serif;
-  font-size: 10vw;
+  font-size: 5vw;
   color: transparent;
   font-weight: bold;
   text-transform: uppercase;
@@ -314,15 +314,17 @@ body {
 .product .product-line-content-wrap {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .product .product-line-content {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin-top: 50px;
-  margin-left: 50px;
+  border: 1px solid #ffd460;
+  border-radius: 20px;
+  width: 250px;
+  height: 370px;
 }
 
 /* contact */
@@ -338,7 +340,22 @@ body {
   flex-direction: column;
 }
 
-.contact-content h1 {
+.contact-title h1 {
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  color: #ffd460;
+  font-weight: 600;
+}
+
+.contact-form {
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 4rem;
+  margin-left: 30px;
+}
+
+.contact-form h1 {
   font-family: "Raleway", sans-serif;
   font-size: 2rem;
   color: #ffd460;
@@ -346,26 +363,11 @@ body {
   text-transform: uppercase;
 }
 
-.contact-content p {
-  font-family: "Raleway", sans-serif;
-  font-size: 1rem;
-  color: #ffd460;
-}
-
-.contact-form {
-  background-color: transparent;
-  border: 1px solid #ffd460;
-  border-radius: 20px;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem 4rem;
-  margin-left: 30px;
-}
-
 .contact-form .input-text {
   display: flex;
   flex-direction: column;
   gap: 5rem;
+  margin-top: 50px;
 }
 
 .contact-form .input-text .emphone {
@@ -417,19 +419,18 @@ body {
 }
 
 .contact-form button {
-  background-color: #ffd460;
+  background-color: transparent;
   border-radius: 20px;
+  border: 2px solid #ffd460;
   height: 50px;
   font-family: "Raleway", sans-serif;
-  color: #2d4059;
-  font-size: 20px;
-  border: none;
-  border-radius: 20px;
+  color: #ffd460;
+  font-size: 15px;
   margin-top: 20px;
   width: 500px;
   height: 50px;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 400;
 }
 
 .marquee {
