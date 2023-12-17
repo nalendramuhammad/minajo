@@ -249,7 +249,7 @@ function App() {
             <p>product</p>
           </div>
           <div className="product-line-content-wrap">
-            {data &&
+            {/* {data &&
               data.map((item) => (
                 <div key={item.sys.id}>
                   <div className="product-line-content">
@@ -257,7 +257,7 @@ function App() {
                     <img src={item.fields.productFoto.fields.file.url}></img>
                   </div>
                 </div>
-              ))}
+              ))} */}
           </div>
         </div>
       </div>
