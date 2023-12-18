@@ -13,7 +13,10 @@ import { BsGeoAlt } from "react-icons/bs";
 import { Helmet } from "react-helmet";
 import { createClient } from "contentful";
 import contentfulConfig from "./contentfulConfig";
+import i18n, { changeLanguage } from "i18next";
+import { useTranslation, initReactI18next } from "react-i18next";
 
+  
 const client = createClient({
   ...contentfulConfig,
   environment: "master",
@@ -28,6 +31,8 @@ client
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  
+  const {t, i18n} = useTranslation();
   const [data, setData] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const marqueeRef = useRef(null);
@@ -39,7 +44,15 @@ function App() {
     message: "",
   });
 
+  useEffect(()=>{
+    const lng = navigator.language();
+    i18n.changeLanguage(lng);
+  }, [])
+
+  const lng = navigator.language;
+
   useEffect(() => {
+
     const fetchData = async () => {
       try {
         const response = await client.getEntries();
@@ -65,6 +78,7 @@ function App() {
     console.log("Form submitted:", formData);
     // You can replace the console.log with your actual form submission code
   };
+  // console.log(t('At Perkasa Charcoal Industries, we are dedicated to providing the finest quality charcoal products, including, rice husk charcoal and coconut shell charcoal'));
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -212,9 +226,8 @@ function App() {
         <div className="footer">
           <div className="rightfooter">
             <p>
-              At Perkasa Charcoal Industries, we are <br /> dedicated to
-              providing the finest quality <br /> charcoal products, including,
-              rice husk <br /> charcoal and coconut shell charcoal
+              {t('desc.first')}
+              BrowserLanguage : {lng}
             </p>
             <p className="readMore">read more.</p>
           </div>
@@ -373,9 +386,9 @@ function App() {
               <div className="line-bawah"></div>
             </div>
             <div className="bahasa">
-              <a href="#">EN</a>
+              <button onClick={() => changeLanguage('en')}>EN</button>
               <div className="line-bahasa"></div>
-              <a href="#">IN</a>
+              <button onClick={() => changeLanguage('id')}>ID</button>
             </div>
           </div>
           <div className="foot-contact">
