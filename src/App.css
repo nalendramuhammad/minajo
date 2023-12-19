@@ -580,7 +580,7 @@ body {
   margin-top: 30px;
 }
 
-.bahasa button {
+.bahasa a {
   text-decoration: none;
   color: #ffd460;
   background-color: transparent;
@@ -626,25 +626,6 @@ body {
   color: #ffd460;
   font-family: "Kaisei Decol", sans-serif;
   font-size: 15px;
-}
-
-.back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 50px;
-  background-color: transparent;
-  border: 1px solid #ffd460;
-  color: #ffd460; /* Change this to your preferred text color */
-  padding: 10px 15px;
-  border-radius: 50%;
-  cursor: pointer;
-  display: none; /* Initially hide the button */
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.back-to-top:hover {
-  background-color: #ffd460; /* Change this to your preferred hover background color */
-  color: #333; /* Change this to your preferred hover text color */
 }
 
 @media screen and (max-width: 768px) {
