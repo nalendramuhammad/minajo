@@ -10,11 +10,6 @@ import { BsGeoAlt } from "react-icons/bs";
 import { Helmet } from "react-helmet";
 import { createClient } from "contentful";
 import contentfulConfig from "./contentfulConfig";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import i18n from "./i18n";
-import { useTranslation } from "react-i18next";
 
 const client = createClient({
   ...contentfulConfig,
@@ -30,6 +25,7 @@ client
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  const { t, i18n } = useTranslation();
   const [data, setData] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const marqueeRef = useRef(null);
@@ -40,29 +36,6 @@ function App() {
     email: "",
     message: "",
   });
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    prevArrow: <></>, // This will hide the "slick-prev" arrow
-    nextArrow: <></>,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-  const { t, i18n } = useTranslation();
-
-  const changeLanguage = (language) => {
-    i18n.changeLanguage(language);
-  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -90,6 +63,7 @@ function App() {
     console.log("Form submitted:", formData);
     // You can replace the console.log with your actual form submission code
   };
+  // console.log(t('At Perkasa Charcoal Industries, we are dedicated to providing the finest quality charcoal products, including, rice husk charcoal and coconut shell charcoal'));
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -237,9 +211,8 @@ function App() {
         <div className="footer">
           <div className="rightfooter">
             <p>
-              At Perkasa Charcoal Industries, we are <br /> dedicated to
-              providing the finest quality <br /> charcoal products, including,
-              rice husk <br /> charcoal and coconut shell charcoal
+              {t("desc.first")}
+              BrowserLanguage : {lng}
             </p>
             <p className="readMore">read more.</p>
           </div>
@@ -404,13 +377,9 @@ function App() {
               <div className="line-bawah"></div>
             </div>
             <div className="bahasa">
-              <a href="#" onClick={() => changeLanguage("en")}>
-                EN
-              </a>
+              <a href="#">EN</a>
               <div className="line-bahasa"></div>
-              <a href="#" onClick={() => changeLanguage("in")}>
-                IN
-              </a>
+              <a href="#">IN</a>
             </div>
           </div>
           <div className="foot-contact">
