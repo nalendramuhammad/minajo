@@ -69,18 +69,14 @@ body {
   display: flex;
   width: 100vw;
   flex-direction: column;
-  padding: 2rem;
+  padding: 2rem 3rem;
   height: 100vh;
   /* background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)),
     url("../src/assets/fp2.jpeg");
   background-repeat: no-repeat;
   background-size: contain; */
   background-color: #2d4059;
-}
-
-/* Additional styles if needed */
-.product h1 {
-  color: #fff; /* Adjust text color for better visibility on dark background */
+  justify-content: center;
 }
 
 .contact {
@@ -311,20 +307,68 @@ body {
   -webkit-text-stroke-width: 2px;
 }
 
-.product .product-line-content-wrap {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 2rem;
+.product-line-content-wrap {
+  margin: 0 40px;
 }
 
-.product .product-line-content {
-  display: flex;
-  margin-top: 50px;
+.slick-dots {
+  text-align: center;
+}
+
+.slick-dots li {
+  display: inline-block;
+}
+
+.slick-dots li button {
+  font-size: 12px;
   border: 1px solid #ffd460;
+  border-radius: 50%;
+  background-color: transparent;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.slick-dots li.slick-active button {
+  background-color: #333;
+  color: #2d4059;
+  transition: background-color 0.7s;
+}
+
+/* Product item styles */
+.product-line-content-wrap .product-line-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  /* border: 1px solid #ffd460; */
   border-radius: 20px;
-  width: 250px;
-  height: 370px;
+  width: 350px;
+  height: 350px;
+}
+
+.product-line-content h3 {
+  position: absolute; /* Add absolute positioning */
+  bottom: 0; /* Adjust the positioning as needed */
+  left: 0; /* Adjust the positioning as needed */
+  margin: 0;
+  padding: 10px;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.3
+  ); /* Add a background color for better visibility */
+  width: 100%;
+  text-align: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.product-line-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
 }
 
 /* contact */
@@ -721,6 +765,17 @@ body {
     font-size: 10vw;
     color: #ffd460;
     font-weight: bold;
+  }
+
+  /* Product item styles */
+  .product-line-content-wrap {
+    margin: 0 30px; /* Adjust margin for smaller screens */
+  }
+
+  .product-line-content-wrap .product-line-content {
+    width: 100%; /* Make the container full width */
+    max-width: 400px; /* Set a maximum width */
+    height: 440px; /* Allow the height to adjust based on content */
   }
 
   /* contact */

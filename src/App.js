@@ -4,15 +4,17 @@ import Logo from "./assets/minajologo.png";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { GoArrowDownRight } from "react-icons/go";
-import { GoArrowUp } from "react-icons/go";
-import minajoproduk from "./assets/fp2.jpeg";
-import { GoDot } from "react-icons/go";
 import { MdOutlineEmail } from "react-icons/md";
 import { LuPhone } from "react-icons/lu";
 import { BsGeoAlt } from "react-icons/bs";
 import { Helmet } from "react-helmet";
 import { createClient } from "contentful";
 import contentfulConfig from "./contentfulConfig";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import i18n from "./i18n";
+import { useTranslation } from "react-i18next";
 
 const client = createClient({
   ...contentfulConfig,
@@ -38,6 +40,29 @@ function App() {
     email: "",
     message: "",
   });
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    prevArrow: <></>, // This will hide the "slick-prev" arrow
+    nextArrow: <></>,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -249,15 +274,21 @@ function App() {
             <p>product</p>
           </div>
           <div className="product-line-content-wrap">
-            {/* {data &&
-              data.map((item) => (
-                <div key={item.sys.id}>
-                  <div className="product-line-content">
-                    <h3>{item.fields.description}</h3>
-                    <img src={item.fields.productFoto.fields.file.url}></img>
+            {data && (
+              <Slider {...settings}>
+                {data.map((item) => (
+                  <div key={item.sys.id}>
+                    <div className="product-line-content">
+                      <h3>{item.fields.description}</h3>
+                      <img
+                        src={item.fields.productFoto.fields.file.url}
+                        alt={item.fields.description}
+                      />
+                    </div>
                   </div>
-                </div>
-              ))} */}
+                ))}
+              </Slider>
+            )}
           </div>
         </div>
       </div>
@@ -373,9 +404,13 @@ function App() {
               <div className="line-bawah"></div>
             </div>
             <div className="bahasa">
-              <a href="#">EN</a>
+              <a href="#" onClick={() => changeLanguage("en")}>
+                EN
+              </a>
               <div className="line-bahasa"></div>
-              <a href="#">IN</a>
+              <a href="#" onClick={() => changeLanguage("in")}>
+                IN
+              </a>
             </div>
           </div>
           <div className="foot-contact">
