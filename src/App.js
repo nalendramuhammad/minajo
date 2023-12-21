@@ -34,7 +34,7 @@ function App() {
   const [isMobile, setIsMobile] = useState(false);
   const marqueeRef = useRef(null);
   const [loadingPercentage, setLoadingPercentage] = useState(0);
-  const [delayAfterComplete, setDelayAfterComplete] = useState(false);
+  // const [delayAfterComplete, setDelayAfterComplete] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -61,8 +61,7 @@ function App() {
   const { t } = useTranslation();
   // ... (other state and useEffect code)
 
-  const changeLanguage = (language, event) => {
-    event.preventDefault();
+  const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };
 
@@ -408,13 +407,13 @@ function App() {
               <div className="line-bawah"></div>
             </div>
             <div className="bahasa">
-              <a href="#" onClick={(e) => changeLanguage("en", e)}>
+              <button onClick={() => changeLanguage("en")}>
                 EN
-              </a>
+              </button>
               <div className="line-bahasa"></div>
-              <a href="#" onClick={(e) => changeLanguage("id", e)}>
+              <button onClick={() => changeLanguage("id")}>
                 IN
-              </a>
+              </button>
             </div>
           </div>
           <div className="foot-contact">
