@@ -13,6 +13,8 @@ import contentfulConfig from "./contentfulConfig";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useTranslation } from "react-i18next";
+import i18n from "./i18n";
 
 const client = createClient({
   ...contentfulConfig,
@@ -55,6 +57,13 @@ function App() {
         },
       },
     ],
+  };
+  const { t } = useTranslation();
+  // ... (other state and useEffect code)
+
+  const changeLanguage = (language, event) => {
+    event.preventDefault();
+    i18n.changeLanguage(language);
   };
 
   useEffect(() => {
@@ -203,22 +212,22 @@ function App() {
           <div className="navbar">
             <div className="home">
               <a href="#App">
-                <li>home</li>
+                <li>{t("translation.home")}</li>
               </a>
             </div>
             <div className="about-navbar">
               <a href="#about">
-                <li>about</li>
+                <li>{t("translation.about")}</li>
               </a>
             </div>
             <div className="product-navbar">
               <a href="#product">
-                <li>product</li>
+                <li>{t("translation.product")}</li>
               </a>
             </div>
             <div className="contact-navbar">
               <a href="#contact">
-                <li>contact</li>
+                <li>{t("translation.contact")}</li>
               </a>
             </div>
           </div>
@@ -230,25 +239,30 @@ function App() {
         <div className="footer">
           <div className="rightfooter">
             <p>
-              At Perkasa Charcoal Industries, we are <br /> dedicated to
-              providing the finest quality <br /> charcoal products, including,
-              rice husk <br /> charcoal and coconut shell charcoal
+              {t("translation.charcoalIndustries")} <br />
+              {t("translation.dedicatedTo")}{" "}
+              {t("translation.providingTheFinest")} <br />
+              {t("translation.charcoalProducts")}{" "}
+              {t("translation.riceHuskCharcoal")} <br />
+              {t("translation.and")} {t("translation.coconutShellCharcoal")}
             </p>
-            <p className="readMore">read more.</p>
+            <p className="readMore">{t("translation.read more.")}</p>
           </div>
         </div>
       </div>
       {/* about */}
       <div className="about" id="about">
         <div className="about-content">
-          <h1>about us</h1>
+          <h1>{t("translation.about us")}</h1>
           <p>
-            Welcome to Minajo, a professional provider in the commodities
-            industry. We are a trusted partner for our customers, providing a
-            wide range of high-quality commodities, including agricultural and
-            fishery products. With our dedication to quality, sustainability and
-            customer satisfaction, we have built a reputation as a reliable
-            supplier in the national market.
+            {t("translation.welcomeToMinajo")}
+            {t("translation.trustedPartner")}
+            {t("translation.providingWideRange")}
+            {t("translation.includingAgricultural")}
+            {t("translation.withDedication")}
+            {t("translation.sustainabilityAndCustomerSatisfaction")}
+            {t("translation.builtAReputation")}
+            {t("translation.inNationalMarket")}
           </p>
         </div>
         <div className="button-about">
@@ -264,7 +278,7 @@ function App() {
       <div className="product" id="product">
         <div className="product-line">
           <div className="product-title">
-            <p>product</p>
+            <p>{t("translation.product")}</p>
           </div>
           <div className="product-line-content-wrap">
             {data && (
@@ -289,14 +303,11 @@ function App() {
       <div className="contact" id="contact">
         <div className="contact-content">
           <div className="contact-title">
-            <h1>
-              Contact us effortlessly. We are ready to assist you with any
-              questions or feedback you may have.
-            </h1>
+            <h1>{t("translation.contactUsEffortlessly")}</h1>
           </div>
         </div>
         <div className="contact-form">
-          <h1>contact</h1>
+          <h1>{t("translation.contact")}</h1>
           <form onSubmit={handleSubmit}>
             <div className="input-text">
               <input
@@ -340,7 +351,7 @@ function App() {
                 required></textarea>
             </div>
 
-            <button type="submit">Send</button>
+            <button type="submit">{t("translation.send")}</button>
           </form>
         </div>
       </div>
@@ -390,20 +401,24 @@ function App() {
         <div className="foot-content">
           <div className="foot-kiri">
             <div className="foot-bottom">
-              <a href="#App">Home</a>
-              <a href="#about">About</a>
-              <a href="#product">Product</a>
-              <a href="#contact">Contact</a>
+              <a href="#App">{t("translation.home")}</a>
+              <a href="#about">{t("translation.about")}</a>
+              <a href="#product">{t("translation.product")}</a>
+              <a href="#contact">{t("translation.contact")}</a>
               <div className="line-bawah"></div>
             </div>
             <div className="bahasa">
-              <a href="#">EN</a>
+              <a href="#" onClick={(e) => changeLanguage("en", e)}>
+                EN
+              </a>
               <div className="line-bahasa"></div>
-              <a href="#">IN</a>
+              <a href="#" onClick={(e) => changeLanguage("id", e)}>
+                IN
+              </a>
             </div>
           </div>
           <div className="foot-contact">
-            <h1>contact</h1>
+            <h1>{t("translation.contact")}</h1>
             <div className="icons">
               <MdOutlineEmail />
               <p>minajoperkasa1@gmail.com</p>
